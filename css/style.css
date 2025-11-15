@@ -205,3 +205,51 @@ header {
 }
 
 /* ===== トップページの余白調整ここまで ===== */
+/* ===== ヒーロー上部のキャッチコピー＆写真 ===== */
+
+.hero {
+  padding-top: 40px;      /* ヘッダーの下に少しだけ余白 */
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;              /* 文字と写真の間隔 */
+  margin-bottom: 20px;    /* ここを変えると白い余白の高さが変わる */
+}
+
+.hero-catch {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.hero-top-photo img {
+  max-width: 260px;       /* 写真の最大幅 */
+  border-radius: 16px;    /* 角を少し丸く */
+  display: block;
+}
+
+/* 画像の上のスキマ対策 */
+.hero-image-wrap img {
+  display: block;
+  width: 100%;
+}
+
+/* スマホ用に少し縮める（あとで本格調整するときの土台） */
+@media (max-width: 768px) {
+  .hero-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-catch {
+    font-size: 26px;
+  }
+
+  .hero-top-photo img {
+    max-width: 200px;
+  }
+}
