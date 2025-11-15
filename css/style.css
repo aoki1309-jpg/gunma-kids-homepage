@@ -259,7 +259,7 @@ header {
 .hero {
   position: relative;
   margin: 0;
-  padding: 16px 0 0;   /* 上だけ40px、下は0 にする */
+  padding: 40px 0 0;   /* 上だけ40px、下は0 にする */
   min-height: auto;    /* もし 100vh など付いていても打ち消す */
 }
 
@@ -269,7 +269,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 8px; /* ←ここが大きいと白いところが広くなる。とりあえず16px */
+  margin-bottom: 16px; /* ←ここが大きいと白いところが広くなる。とりあえず16px */
 }
 
 /* キャッチコピー */
