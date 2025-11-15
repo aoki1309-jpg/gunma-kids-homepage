@@ -253,3 +253,63 @@ header {
     max-width: 200px;
   }
 }
+/* ===== heroエリアの余白リセット＆調整 ===== */
+
+/* 全体の白い余白が広くなりすぎないようにする */
+.hero {
+  position: relative;
+  margin: 0;
+  padding: 40px 0 0;   /* 上だけ40px、下は0 にする */
+  min-height: auto;    /* もし 100vh など付いていても打ち消す */
+}
+
+/* 余白をとり過ぎないように */
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 16px; /* ←ここが大きいと白いところが広くなる。とりあえず16px */
+}
+
+/* キャッチコピー */
+.hero-catch {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+/* 写真のスタイル（写真いらなければこのブロックごと削除してもOK） */
+.hero-top-photo img {
+  max-width: 260px;
+  border-radius: 16px;
+  display: block;
+}
+
+/* イラスト画像の余計なスキマを消す */
+.hero-image-wrap {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image-wrap img {
+  display: block;
+  width: 100%;
+}
+
+/* スマホ用ざっくり調整 */
+@media (max-width: 768px) {
+  .hero-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-catch {
+    font-size: 26px;
+  }
+
+  .hero-top-photo img {
+    max-width: 200px;
+  }
+}
