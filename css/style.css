@@ -1,0 +1,207 @@
+/* 共通 */
+body {
+  font-family: "YuGothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.container {
+  width: 1160px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ヘッダー */
+.site-header {
+  background: #ffffff;
+  border-bottom: 3px solid #f3f3f3;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.site-logo img {
+  height: 60px;
+}
+
+/* ナビ */
+.site-nav ul {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.site-nav a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.site-nav a:hover {
+  background: #f5f5f5;
+}
+
+/* ヒーロー */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: left;
+}
+
+.hero-copy-sub {
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-copy-main {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-copy-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-button {
+  display: inline-block;
+  background: #ffd600;
+  color: #333;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 3px 0 #e0b800;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+}
+
+.hero-button:hover {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #e0b800;
+  background: #ffe766;
+}
+
+/* セクションカード */
+.sections-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 0 60px;
+}
+
+.section-card {
+  flex: 1 1 calc(50% - 24px);
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.section-card a {
+  display: block;
+  height: 100%;
+  color: inherit;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.section-image img {
+  display: block;
+  width: 100%;
+}
+
+.section-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px 20px 4px;
+}
+
+.section-card p {
+  font-size: 14px;
+  padding: 0 20px 20px;
+  line-height: 1.7;
+}
+
+/* フッター */
+.site-footer {
+  background: #f4f4f4;
+  padding: 16px 0;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-logo {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* ===== トップページの余白調整ここから ===== */
+
+/* ページ全体の余白をなくす（まだ書いてなければ） */
+body {
+  margin: 0;
+}
+
+/* ヘッダーの下の余白を消す */
+header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ヒーロー（山と海の大きなイラスト）部分 */
+.hero {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 山と海の画像の表示方法を調整して、上の空白を消す */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: top;  /* ← 画像を上側にピッタリ寄せる */
+}
+
+/* 画像の上に乗っている「ぐんま子どもの旅」の文字など */
+.hero-text {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: #ffffff;
+}
+
+/* ===== トップページの余白調整ここまで ===== */
