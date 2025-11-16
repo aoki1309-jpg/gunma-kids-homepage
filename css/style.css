@@ -367,11 +367,8 @@ header {
   font-size: clamp(24px, 3vw, 40px);                    /* 画面幅に応じて可変 */
   font-weight: 700;
   line-height: 1.6;
-  text-shadow: 
-    -2px -2px 0 #fff,
-     2px -2px 0 #fff,
-    -2px  2px 0 #fff,
-     2px  2px 0 #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+             0 0 20px rgba(255, 255, 255, 0.8);
              /* 黒い光彩でくっきり */
   margin: 0;
 }
