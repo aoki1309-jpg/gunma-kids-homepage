@@ -294,9 +294,12 @@ header {
 }
 
 .hero-image-wrap img {
-  display: block;
-  width: 100%;
+    width: 100%;
+    height: 500px; /* 好みで調整可能 */
+    object-fit: cover;
+    object-position: bottom center; 
 }
+
 
 /* スマホ用ざっくり調整 */
 @media (max-width: 768px) {
