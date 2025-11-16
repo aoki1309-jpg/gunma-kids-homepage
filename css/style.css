@@ -259,7 +259,7 @@ header {
 .hero {
   position: relative;
   margin: 0;
-  padding: 40px 0 0;   /* 上だけ40px、下は0 にする */
+  padding: 30px 0 0;   /* 上だけ40px、下は0 にする */
   min-height: auto;    /* もし 100vh など付いていても打ち消す */
 }
 
@@ -294,8 +294,9 @@ header {
 }
 
 .hero-image-wrap img {
-  display: block;
   width: 100%;
+  max-height: 420px;   /* ← 480 から 420 に */
+  object-fit: cover;
 }
 
 /* スマホ用ざっくり調整 */
