@@ -294,9 +294,8 @@ header {
 }
 
 .hero-image-wrap img {
+  display: block;
   width: 100%;
-  max-height: 420px;   /* ← 480 から 420 に */
-  object-fit: cover;
 }
 
 /* スマホ用ざっくり調整 */
