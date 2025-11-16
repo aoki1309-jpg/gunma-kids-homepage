@@ -12,7 +12,14 @@ body {
   padding: 0 16px;
 }
 
-/* ヘッダー */
+/* ヘッダーの中だけは横幅いっぱい＆左寄せにする */
+.site-header .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 24px;  /* お好みで左右の余白。キツかったら16pxとかにしてOK */
+}
+
 /* ヘッダー */
 .site-header {
   position: sticky;   /* ← ここを追加 */
