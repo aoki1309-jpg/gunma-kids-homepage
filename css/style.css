@@ -13,7 +13,11 @@ body {
 }
 
 /* ヘッダー */
+/* ヘッダー */
 .site-header {
+  position: sticky;   /* ← ここを追加 */
+  top: 0;             /* ← ここを追加（画面の一番上にくっつける） */
+  z-index: 1000;      /* ← 手前に出す */
   background: #ffffff;
   border-bottom: 3px solid #f3f3f3;
 }
@@ -21,9 +25,11 @@ body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* ロゴ＋メニューを左寄せ */
+  gap: 40px;                   /* ロゴとメニューの間の余白 */
   padding: 12px 0;
 }
+
 
 .site-logo img {
   height: 60px;
