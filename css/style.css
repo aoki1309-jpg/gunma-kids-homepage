@@ -351,8 +351,22 @@ header {
   justify-content: flex-end;   /* ← テキストを右寄せ */
 }
 
-.hero-copy-main,
-.hero-copy-sub,
-.hero-copy-desc {
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+.hero-text-container {
+  position: absolute;
+  inset: 0;                 /* 上下左右いっぱいに広げる */
+  display: flex;
+  align-items: center;      /* 縦方向まん中 */
+  justify-content: center;  /* 横方向まん中 */
+  padding: 0 2rem;
+  text-align: center;
+  pointer-events: none;     /* テキストの上でもクリックを邪魔しない（任意） */
+}
+
+.hero-copy-main {
+  color: #ffffff;                                       /* 白文字 */
+  font-size: clamp(24px, 3vw, 40px);                    /* 画面幅に応じて可変 */
+  font-weight: 700;
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);             /* 黒い光彩でくっきり */
+  margin: 0;
 }
