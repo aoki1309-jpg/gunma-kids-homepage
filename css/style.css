@@ -309,11 +309,10 @@ header {
 
 /* テキストエリア */
 .hero-text {
-  position: relative;
-  z-index: 1;          /* 画像より手前に表示 */
-  max-width: 520px;
-  padding: 0 24px;
+  text-align: right;           /* ← テキストも右寄せ */
+  margin-right: 5%;            /* ← 右に少し余白 */
 }
+
 
 /* キャッチコピーのサイズ調整（お好みで微調整OK） */
 .hero-copy-sub {
@@ -346,4 +345,14 @@ header {
   .hero-top-photo img {
     max-width: 200px;
   }
+}
+
+.hero {
+  justify-content: flex-end;   /* ← テキストを右寄せ */
+}
+
+.hero-copy-main,
+.hero-copy-sub,
+.hero-copy-desc {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
 }
