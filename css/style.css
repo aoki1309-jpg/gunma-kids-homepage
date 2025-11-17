@@ -318,6 +318,11 @@ header {
   .hero-top-photo img {
     max-width: 200px;
   }
+
+  .container {
+    padding: 0 18px;   /* お好みで 16〜20px あたり */
+    box-sizing: border-box;
+  }
 }
 /* ===== heroエリアの余白リセット＆調整 ===== */
 
@@ -647,7 +652,7 @@ header {
    「ぐんま子どもの旅とは？」紹介ブロック
    ========================= */
 .intro-section {
-  padding: 48px 0 40px;
+  padding: 48px 0 32px;
   background: #f9fcff;  /* ほんのり水色背景でヒーローとの区切り */
 }
 
@@ -667,7 +672,7 @@ header {
 .intro-points {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .intro-point-card {
@@ -743,6 +748,7 @@ header {
     white-space: nowrap;
     gap: 16px;
     padding: 0 12px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-nav-inner a {
@@ -751,6 +757,7 @@ header {
     color: #333;
     font-weight: 600;
     padding: 6px 10px;
+    flex: 0 0 auto;
   }
 
   /* お問い合わせだけボタン調整 */
