@@ -757,99 +757,121 @@ body {
    スマホ用ヘッダー＋ハンバーガーメニュー
    ========================= */
 
-/* PCでは非表示にしておく */
+/* =========================
+   スマホ用ヘッダー＋ハンバーガーメニュー
+   ========================= */
+
+/* PCでは非表示 */
 .mobile-header,
 .mobile-menu {
   display: none;
 }
 
 @media (max-width: 768px) {
-  /* 左サイドバーはスマホでは隠す */
-  .site-nav {
+
+  /* PC用サイドバーはスマホでは非表示にする */
+  .site-header {
     display: none;
   }
 
-  /* スマホヘッダー表示 */
+  /* 本文は左の余白をなくして全幅に */
+  main {
+    margin-left: 0;
+  }
+
+  /* ───── ヘッダー本体（画面上部に固定） ───── */
   .mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 12px;
-    background: #ffffff;
-    position: sticky;
+    display: block;
+    position: fixed;      /* スクロールしても付いてくる */
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    background: #ffffff;
     border-bottom: 1px solid #eee;
   }
 
-  .mobile-header-logo img {
-    height: 46px; /* お好みで */
+  .mobile-header-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .mobile-header-title {
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-logo {
+    height: 40px;
+  }
+
+  .header-title {
     font-size: 18px;
     font-weight: 700;
-    color: #3a9235;
-    margin-left: 8px;
-    flex: 1;
+    color: #3a9235;   /* 文字を緑色に */
   }
 
-  /* ハンバーガーボタン */
-  .mobile-nav-toggle {
-    display: none; /* チェックボックス自体は隠す */
-  }
-
-  .mobile-nav-button {
+  /* ───── ハンバーガーアイコン ───── */
+  .hamburger {
     width: 30px;
     height: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    margin-left: 16px;   /* ロゴとの距離を少しあける */
   }
 
-  .mobile-nav-button span {
+  .hamburger span {
     display: block;
     height: 3px;
     border-radius: 999px;
-    background: #333;
+    background: #3a9235;   /* 緑色の三本線 */
   }
 
-  /* メニュー本体（プルダウン） */
+  /* コンテンツがヘッダーの下に隠れないように余白を足す */
+  body.top-page {
+    padding-top: 64px;   /* ヘッダーの高さぶん。足りなければ70〜80に調整 */
+  }
+
+  /* ───── プルダウンメニュー ───── */
   .mobile-menu {
-    display: block;    /* ベースとしては表示 */
+    display: block;
     position: fixed;
-    inset: 0;         /* 画面全体にかぶせる */
+    inset: 0;                     /* 画面全体を覆う */
     background: rgba(255, 255, 255, 0.97);
     z-index: 999;
-    transform: translateY(-100%);
-    transition: transform 0.2s ease-out;
-    padding-top: 70px; /* ヘッダー分の余白 */
+    transform: translateY(-100%); /* 初期状態は画面の上に隠しておく */
+    transition: transform 0.25s ease-out;
+    padding-top: 80px;            /* ヘッダーの高さぶん上に余白 */
   }
 
   .mobile-menu ul {
     list-style: none;
-    padding: 0 24px;
     margin: 0;
+    padding: 0 24px 32px;
   }
 
+  /* ★ここでメニューの行間を広げる */
   .mobile-menu li + li {
-    margin-top: 16px;
+    margin-top: 20px;   /* ここを22〜24pxにしてもOK */
   }
 
   .mobile-menu a {
-    font-size: 18px;
+    display: block;
+    font-size: 20px;    /* 押しやすいよう大きめ */
+    font-weight: 600;
     text-decoration: none;
     color: #333;
-    font-weight: 600;
   }
 
-  .mobile-menu a:last-child {
-    /* お問い合わせだけ少し目立たせたい場合 */
-  }
-
-  /* チェックが入ったらメニューを下にスライドイン */
-  .mobile-nav-toggle:checked ~ .mobile-menu {
+  /* JS で .open クラスを付けたときにメニューを表示する */
+  .mobile-menu.open {
     transform: translateY(0);
   }
 }

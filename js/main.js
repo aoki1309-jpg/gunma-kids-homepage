@@ -1,3 +1,12 @@
 // main.js
-// 今のところトップページでは特にJSは不要。
-// 共通の挙動を追加したくなったときにここに書いていきましょう。
+// js/main.js
+document.addEventListener('DOMContentLoaded', () => {
+  const btn  = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+});
