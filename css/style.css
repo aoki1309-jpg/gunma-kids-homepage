@@ -615,14 +615,6 @@ header {
   }
 }
 
-/* PC表示のときは会社情報を少し右に寄せる */
-@media (min-width: 769px) {
-  .contact-summary-left {
-    padding-left: 56px;   /* ← お好みで 32〜60px くらいに調整OK */
-    box-sizing: border-box;
-  }
-}
-
 /* =========================
    PC表示時は横幅を固定して
    見え方をほぼ同じにする
@@ -635,5 +627,18 @@ header {
   .container {
     width: 1160px;       /* もともとの幅をキープ */
     max-width: 1160px;   /* これ以上は縮まない */
+  }
+}
+
+/* PCでは会社情報ブロックを少し右寄せにする */
+@media (min-width: 1024px) {
+  .contact-summary-inner {
+    justify-content: flex-end;  /* 右側に寄せる */
+    gap: 80px;                  /* 左右のブロックの間隔 */
+  }
+
+  .contact-summary-left,
+  .contact-summary-right {
+    flex: 0 0 360px;            /* 横幅を揃えてコンパクトに */
   }
 }
