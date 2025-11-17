@@ -700,3 +700,14 @@ header {
     flex-direction: column;
   }
 }
+.intro-title {
+  line-height: 1.4;
+}
+
+.intro-point-card {
+  padding: 20px 22px;   /* ← 少しだけ余裕を持たせる */
+}
+
+.intro-section {
+  padding-bottom: 60px;
+}
