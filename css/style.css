@@ -463,3 +463,25 @@ header {
     margin-left: 0;
   }
 }
+
+/* メニュー文字をポップかわいい丸ゴシックに */
+.site-nav a {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* サイドメニュー全体の文字サイズを大きく */
+.site-nav a {
+  font-size: 18px;       /* ← ここで調整（20pxでもOK） */
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ロゴ下の会社名 */
+.company-name {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 24px;        /* メニューより大きく */
+  font-weight: 700;       /* しっかり太字 */
+  color: #7ED957;         /* 黄緑（ポップカラー） */
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
