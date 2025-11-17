@@ -760,3 +760,9 @@ header {
     padding: 6px 14px;
   }
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden; /* ← これでページ全体の横スクロールを止める */
+}
