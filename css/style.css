@@ -502,3 +502,114 @@ header {
   margin-top: 6px;
   margin-bottom: 20px;
 }
+
+/* =========================
+   トップページ下部：会社情報 & お問い合わせ
+   ========================= */
+.contact-summary-section {
+  background: #fdf8e8;          /* ほんのりクリーム色 */
+  padding: 48px 0;
+}
+
+.contact-summary-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.contact-summary-left,
+.contact-summary-right {
+  flex: 1 1 320px;
+}
+
+/* 左側：会社情報 */
+.contact-summary-label {
+  font-weight: 700;
+  color: #3a9235;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.contact-summary-name {
+  font-weight: 700;
+  font-size: 32px;
+  color: #3a9235;
+  margin: 0 0 16px;
+}
+
+.contact-summary-address {
+  font-size: 14px;
+  margin: 4px 0 12px;
+}
+
+.contact-summary-link a {
+  font-size: 14px;
+  color: #3a9235;
+  text-decoration: underline;
+}
+
+/* 右側：お問い合わせ */
+.contact-summary-heading {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-summary-tel-label {
+  font-weight: 700;
+  color: #3a9235;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.contact-summary-tel-number {
+  font-weight: 700;
+  color: #3a9235;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.contact-summary-hours {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* 黄色いお問い合わせボタン */
+.contact-summary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: #ffc94d;
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-summary-button-icon {
+  font-size: 18px;
+}
+
+.contact-summary-button:hover {
+  background: #ffdb7d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* スマホ時は縦並びに */
+@media (max-width: 768px) {
+  .contact-summary-section {
+    padding: 32px 0;
+  }
+
+  .contact-summary-inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
