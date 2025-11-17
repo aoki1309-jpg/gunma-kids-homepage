@@ -498,7 +498,7 @@ header {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 24px;        /* メニューより大きく */
   font-weight: 700;       /* しっかり太字 */
-  color: #7ED957;         /* 黄緑（ポップカラー） */
+  color: #3a9235;         /* 黄緑（ポップカラー） */
   margin-top: 6px;
   margin-bottom: 20px;
 }
@@ -611,5 +611,13 @@ header {
   .contact-summary-inner {
     flex-direction: column;
     gap: 24px;
+  }
+}
+
+/* PC表示のときは会社情報を少し右に寄せる */
+@media (min-width: 769px) {
+  .contact-summary-left {
+    padding-left: 40px;   /* ← お好みで 32〜60px くらいに調整OK */
+    box-sizing: border-box;
   }
 }
