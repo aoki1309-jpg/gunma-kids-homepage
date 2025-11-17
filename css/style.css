@@ -642,3 +642,61 @@ header {
     flex: 0 0 360px;            /* 横幅を揃えてコンパクトに */
   }
 }
+
+/* =========================
+   「ぐんま子どもの旅とは？」紹介ブロック
+   ========================= */
+.intro-section {
+  padding: 48px 0 40px;
+  background: #f9fcff;  /* ほんのり水色背景でヒーローとの区切り */
+}
+
+.intro-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.intro-lead {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.intro-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.intro-point-card {
+  flex: 1 1 260px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.intro-point-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3a9235;  /* サイドバーと同じ系統の緑 */
+}
+
+.intro-point-card p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* スマホ時は縦一列に */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 32px 0 24px;
+  }
+
+  .intro-points {
+    flex-direction: column;
+  }
+}
