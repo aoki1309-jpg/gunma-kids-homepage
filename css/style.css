@@ -617,7 +617,7 @@ header {
 /* PC表示のときは会社情報を少し右に寄せる */
 @media (min-width: 769px) {
   .contact-summary-left {
-    padding-left: 40px;   /* ← お好みで 32〜60px くらいに調整OK */
+    padding-left: 56px;   /* ← お好みで 32〜60px くらいに調整OK */
     box-sizing: border-box;
   }
 }
