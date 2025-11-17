@@ -711,3 +711,52 @@ header {
 .intro-section {
   padding-bottom: 60px;
 }
+
+/* ------------------------
+   スマホ専用横スクロールナビ
+------------------------- */
+.mobile-nav {
+  display: none;  /* PCでは非表示 */
+}
+
+@media (max-width: 768px) {
+
+  /* サイドバーを非表示（スマホ時） */
+  .site-nav {
+    display: none;
+  }
+
+  /* モバイルナビを表示 */
+  .mobile-nav {
+    display: block;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .mobile-nav-inner {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .mobile-nav-inner a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 6px 10px;
+  }
+
+  /* お問い合わせだけボタン調整 */
+  .mobile-nav-inner .contact-btn {
+    background: #ffc94d;
+    border-radius: 999px;
+    padding: 6px 14px;
+  }
+}
