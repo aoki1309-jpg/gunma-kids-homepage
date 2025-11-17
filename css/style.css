@@ -652,7 +652,7 @@ header {
    「ぐんま子どもの旅とは？」紹介ブロック
    ========================= */
 .intro-section {
-  padding: 48px 0 32px;
+  padding: 32x 0 20px;
   background: #f9fcff;  /* ほんのり水色背景でヒーローとの区切り */
 }
 
@@ -672,14 +672,14 @@ header {
 .intro-points {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .intro-point-card {
   flex: 1 1 260px;
   background: #ffffff;
   border-radius: 16px;
-  padding: 16px 18px;
+  padding: 12px 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -698,7 +698,7 @@ header {
 /* スマホ時は縦一列に */
 @media (max-width: 768px) {
   .intro-section {
-    padding: 32px 0 24px;
+    padding: 24px 12px;
   }
 
   .intro-points {
@@ -710,7 +710,7 @@ header {
 }
 
 .intro-point-card {
-  padding: 20px 22px;   /* ← 少しだけ余裕を持たせる */
+  padding: 10px 14px;   /* ← 少しだけ余裕を持たせる */
 }
 
 .intro-section {
