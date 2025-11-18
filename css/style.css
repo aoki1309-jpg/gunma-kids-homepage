@@ -1044,7 +1044,7 @@ body {
   margin-top: 16px;
   text-align: center;
   padding: 16px;
-  background: #b7e1fdff;        /* うすい水色 */
+  background: #c8e6faff;        /* うすい水色 */
   border-radius: 12px;
 }
 
@@ -1119,7 +1119,7 @@ body {
 
 .staff-role {
   font-size: 0.9rem;
-  color: #2e7d32;
+  color: #62f56aff;
   margin-bottom: 8px;
 }
 
@@ -1134,7 +1134,7 @@ body {
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   overflow: hidden;
-  max-width: 900px;          /* 横を少し広めにとる */
+  max-width: 1200px;          /* 横を少し広めにとる */
   background: #ffffff;
 }
 
@@ -1215,7 +1215,7 @@ body {
 
 /* やさしい背景色をつけた強調セクション */
 .about-section--highlight {
-  background: #bef5beff;              /* うすい黄緑寄りの白 */
+  background: #d2fad2ff;              /* うすい黄緑寄りの白 */
   border-radius: 12px;
   padding: 24px 24px 28px;          /* 中の余白をしっかり取る */
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
