@@ -1886,3 +1886,17 @@ body {
 .site-nav a::before {
   font-size: 1.2rem;
 }
+
+/* ==========================
+   メニューの統一アイコン（緑色の小さな丸）
+   ========================== */
+
+.site-nav a::before,
+.mobile-menu a::before {
+  content: "●";
+  color: #2e7d32;        /* 深緑でサイトカラーと統一 */
+  font-size: 0.7rem;     /* 小さくて可愛い丸 */
+  margin-right: 8px;
+  display: inline-block;
+  line-height: 1;
+}
