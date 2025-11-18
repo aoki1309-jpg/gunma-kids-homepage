@@ -1888,3 +1888,70 @@ body {
   display: inline-block;
   line-height: 1;
 }
+
+/* ==========================
+   みんなの声（画像版）
+   ========================== */
+
+.voices-gallery {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.voices-gallery h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-left: 4px solid #2e7d32;
+  padding-left: 10px;
+}
+
+.voices-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.voice-image-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.voice-image-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* タグ部分（左上） */
+.voice-img-tag {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.tag-course {
+  background: #e8f5e9;
+  color: #1b5e20;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.tag-person {
+  background: #e3f2fd;
+  color: #0d47a1;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* スマホ対応 */
+@media(max-width: 600px) {
+  .voices-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
