@@ -968,41 +968,94 @@ body {
   .hamburger-btn.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
+  .hamburger-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #c8e6c9;
+  background: #ffffff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
 
-  /* メニュー本体（全画面に白い板を出す） */
+/* タップ時のちょっとした動き */
+.hamburger-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+  /* ==========================
+   スマホ用サイドメニューを可愛く
+   ========================== */
+
+.mobile-menu {
+  position: fixed;
+  top: 56px;                /* スマホヘッダーの下から出る想定 */
+  left: 0;
+  right: 0;
+  background: transparent;  /* いったん透明にして、内側にカードを作る */
+  z-index: 999;
+  display: none;            /* JS側で block にする前提 */
+}
+
+.mobile-menu ul {
+  margin: 8px auto 0;
+  padding: 8px 10px 12px;
+  max-width: 320px;
+  list-style: none;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* 1行ごとのボタン風 */
+.mobile-menu li + li {
+  margin-top: 4px;
+}
+
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #f7fbf7;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* 押したくなるようなホバー（タップ） */
+.mobile-menu a:hover {
+  background: #e3f2fd;
+}
+
+/* 左に小さいアイコン（絵文字）を付ける */
+.mobile-menu a::before {
+  font-size: 1.1rem;
+}
+
+/* メニューごとにアイコン変更（並び順に合わせて） */
+.mobile-menu li:nth-child(1) a::before { content: "👨‍👩‍👧"; } /* わたしたちについて */
+.mobile-menu li:nth-child(2) a::before { content: "🚌"; }       /* 旅について */
+.mobile-menu li:nth-child(3) a::before { content: "✉️"; }       /* お申込み */
+.mobile-menu li:nth-child(4) a::before { content: "🌟"; }       /* みんなの声 */
+.mobile-menu li:nth-child(5) a::before { content: "👪"; }       /* 保護者の声 */
+.mobile-menu li:nth-child(6) a::before { content: "❓"; }       /* よくある質問 */
+.mobile-menu li:nth-child(7) a::before { content: "📷"; }       /* 写真の購入 */
+.mobile-menu li:nth-child(8) a::before { content: "📮"; }       /* お問い合わせ */
+
+/* スマホだけ適用（PCでは今のまま） */
+@media (min-width: 769px) {
   .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 64px; /* ヘッダーの高さ分ずらす */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.96);
-    z-index: 900;
-    overflow-y: auto;
+    display: none !important;
   }
 
-  .mobile-menu.open {
-    display: block;
-  }
-
-  .mobile-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 24px 24px 40px;
-  }
-
-  /* ← メニューの行間を広めにする（押し間違え防止） */
-  .mobile-menu li + li {
-    margin-top: 20px;
-  }
-
-  .mobile-menu a {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #333;
-    text-decoration: none;
-  }
 
   /* ヘッダーぶん本文を下げる（隠れ防止） */
   main {
