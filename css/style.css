@@ -1572,3 +1572,101 @@ body {
   background: #999999;
   color: #ffffff;
 }
+
+/* ==========================
+   フッター
+   ========================== */
+
+.site-footer {
+  margin-top: 48px;
+  background: #f3f8f3;
+  border-top: 3px solid #81c784;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 16px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ← ロゴサイズの指定（これが重要！） */
+.footer-logo {
+  width: 40px;
+  height: auto;
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.footer-copy {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.footer-links {
+  flex: 2 1 260px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #555;
+  padding-left: 10px;
+  position: relative;
+}
+
+.footer-nav a::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+.footer-policies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px dashed #a5d6a7;
+  background: white;
+  font-size: 0.78rem;
+}
+
+.footer-pill::before {
+  content: "🌱";
+  margin-right: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 8px 16px 14px;
+  font-size: 0.75rem;
+  color: #777;
+  background: #f9fbf9;
+}
