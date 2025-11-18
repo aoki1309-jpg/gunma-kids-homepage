@@ -1017,3 +1017,130 @@ body {
     margin-bottom: 16px;
   }
 }
+
+/* ==========================
+   About Us ページ用
+   ========================== */
+
+.about-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+/* 上の大きな写真＋タイトル */
+.about-hero {
+  margin-bottom: 32px;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-hero-copy {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.about-hero-copy h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.about-hero-copy p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 共通セクション */
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  border-left: 4px solid #2e7d32; /* 深めの緑 */
+  padding-left: 8px;
+}
+
+.about-section p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.about-representative {
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* スタッフ紹介 */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.staff-card {
+  text-align: center;
+  padding: 16px;
+}
+
+.staff-avatar-wrap {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  border: 4px solid #2e7d32;  /* ○枠の色 */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.staff-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 画像中央でトリミングして丸の中に収める */
+}
+
+.staff-name {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.staff-role {
+  font-size: 0.9rem;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.staff-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* 会社概要 表風レイアウト */
+.company-table {
+  border-top: 1px solid #ddd;
+}
+
+.company-table > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.company-table dt {
+  font-weight: 600;
+  color: #333;
+}
+
+.company-table dd {
+  margin: 0;
+}
