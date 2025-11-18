@@ -1043,7 +1043,11 @@ body {
 .about-hero-copy {
   margin-top: 16px;
   text-align: center;
+  padding: 16px;
+  background: #f5fbff;        /* うすい水色 */
+  border-radius: 12px;
 }
+
 
 .about-hero-copy h1 {
   font-size: 2rem;
@@ -1126,14 +1130,25 @@ body {
 
 /* 会社概要 表風レイアウト */
 .company-table {
-  border-top: 1px solid #ddd;
+  margin-top: 16px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  max-width: 900px;          /* 横を少し広めにとる */
+  background: #ffffff;
 }
 
 .company-table > div {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  grid-template-columns: 160px 1fr;  /* 左の項目を少し広く */
+  padding: 10px 16px;                /* 行の上下左右に余白を増やす */
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+/* 行ごとにうっすら色を変えるとさらに見やすい */
+.company-table > div:nth-child(even) {
+  background: #fafafa;
 }
 
 .company-table dt {
@@ -1196,4 +1211,12 @@ body {
 .staff-desc {
   font-size: 0.85rem;
   line-height: 1.6;
+}
+
+/* やさしい背景色をつけた強調セクション */
+.about-section--highlight {
+  background: #f7fbf7;              /* うすい黄緑寄りの白 */
+  border-radius: 12px;
+  padding: 24px 24px 28px;          /* 中の余白をしっかり取る */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
