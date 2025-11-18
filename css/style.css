@@ -1484,3 +1484,91 @@ body {
   font-weight: 600;
   width: 45%;
 }
+
+/* ==========================
+   ご利用規約・各種ポリシー 一覧
+   ========================== */
+
+.policy-index-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.policy-hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.policy-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.policy-hero p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.policy-section {
+  margin-bottom: 32px;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* 基本カード */
+.policy-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px 22px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.policy-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.policy-tag {
+  font-size: 0.8rem;
+  color: #2e7d32;
+  opacity: 0.85;
+}
+
+.policy-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.policy-actions {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 少し目立たせたいメインカード（旅行条件書） */
+.policy-card--main {
+  border: 1px solid #aed581;
+  background: #f7fff2;
+}
+
+/* サブボタン（グレーっぽい） */
+.btn-link-sub {
+  border-color: #999999;
+  color: #666666;
+}
+
+.btn-link-sub:hover {
+  background: #999999;
+  color: #ffffff;
+}
