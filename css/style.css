@@ -1873,19 +1873,7 @@ body {
   color: #2e7d32;
 }
 
-/* 左に絵文字アイコンを追加（スマホと合わせて統一感を出す） */
-.site-nav li:nth-child(1) a::before { content: "👨‍👩‍👧"; }
-.site-nav li:nth-child(2) a::before { content: "🚌"; }
-.site-nav li:nth-child(3) a::before { content: "✉️"; }
-.site-nav li:nth-child(4) a::before { content: "🌟"; }
-.site-nav li:nth-child(5) a::before { content: "👪"; }
-.site-nav li:nth-child(6) a::before { content: "❓"; }
-.site-nav li:nth-child(7) a::before { content: "📷"; }
-.site-nav li:nth-child(8) a::before { content: "📮"; }
 
-.site-nav a::before {
-  font-size: 1.2rem;
-}
 
 /* ==========================
    メニューの統一アイコン（緑色の小さな丸）
