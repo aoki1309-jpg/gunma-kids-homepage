@@ -1309,18 +1309,38 @@ body {
 
 .season-tag {
   font-size: 0.85rem;
-  color: #2e7d32;
   margin-bottom: 8px;
 }
 
-/* 春・夏で少しだけ色を変える */
+/* 春・夏・その他で色分け */
 .season-card--spring {
-  border-top: 4px solid #81c784;   /* 春っぽい緑 */
+  border-top: 4px solid #81c784;      /* 春っぽい明るい緑 */
+  background: #f6fff7;                /* うす〜い緑背景 */
 }
 
 .season-card--summer {
-  border-top: 4px solid #4fc3f7;   /* 夏っぽい青 */
+  border-top: 4px solid #4fc3f7;      /* 夏っぽい水色 */
+  background: #f3fbff;                /* うすい水色背景 */
 }
+
+.season-card--other {
+  border-top: 4px solid #ffb74d;      /* オレンジ系 */
+  background: #fff8ef;                /* うすいオレンジ背景 */
+}
+
+/* タグの色も合わせておくと分かりやすい */
+.season-tag--spring {
+  color: #388e3c;
+}
+
+.season-tag--summer {
+  color: #0277bd;
+}
+
+.season-tag--other {
+  color: #ef6c00;
+}
+
 
 /* 安全管理カード */
 .safety-grid {
@@ -1370,6 +1390,19 @@ body {
   color: #2e7d32;
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+/* 準備中ボタン（リンク無効風） */
+.btn-link-disabled {
+  border-style: dashed;
+  color: #999999;
+  border-color: #cccccc;
+  cursor: default;
+}
+
+.btn-link-disabled:hover {
+  background: transparent;
+  color: #999999;
 }
 
 .btn-link:hover {
