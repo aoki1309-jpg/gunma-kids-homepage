@@ -1409,3 +1409,78 @@ body {
   background: #2e7d32;
   color: #fff;
 }
+
+/* ==========================
+   規約・旅行条件書ページ
+   ========================== */
+
+.legal-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.legal-hero {
+  margin-bottom: 24px;
+}
+
+.legal-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.legal-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.legal-section {
+  margin-bottom: 32px;
+  background: #fdfdfd;
+  border-radius: 12px;
+  padding: 20px 24px 24px;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.legal-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  border-left: 4px solid #2e7d32;
+  padding-left: 8px;
+}
+
+.legal-list {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.legal-list li {
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+
+.legal-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* 取消料テーブル */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.legal-table th,
+.legal-table td {
+  border: 1px solid #e0e0e0;
+  padding: 6px 8px;
+}
+
+.legal-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  width: 45%;
+}
