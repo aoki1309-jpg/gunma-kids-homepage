@@ -875,3 +875,145 @@ body {
     transform: translateY(0);
   }
 }
+
+/* =========================
+   スマホ用ヘッダー＆メニュー
+   ========================= */
+
+/* デフォルトでは非表示（PCのときは左サイドバーを使う） */
+.mobile-header,
+.mobile-menu {
+  display: none;
+}
+
+/* 768px 以下（スマホ）のときに表示 */
+@media (max-width: 768px) {
+  /* 左サイドバーはスマホでは隠す */
+  .site-header {
+    display: none;
+  }
+
+  /* 画面上部にくっついてスクロールしても付いてくるヘッダー */
+  .mobile-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: #ffffff;
+    border-bottom: 2px solid #f3f3f3;
+    z-index: 1000;
+  }
+
+  .mobile-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-header-logo {
+    width: 56px;
+    height: auto;
+  }
+
+  .mobile-header-title {
+    font-family: "M PLUS Rounded 1c", system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #35a44a; /* ぐんま子どもの旅の緑 */
+    letter-spacing: 0.04em;
+  }
+
+  /* ハンバーガーボタン（右側） */
+  .hamburger-btn {
+    width: 40px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    padding: 4px 0;
+    cursor: pointer;
+  }
+
+  .hamburger-btn span {
+    display: block;
+    height: 3px;
+    border-radius: 999px;
+    background: #35a44a; /* 緑色の三本線 */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* 開いたときに「×」っぽくする */
+  .hamburger-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* メニュー本体（全画面に白い板を出す） */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px; /* ヘッダーの高さ分ずらす */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.96);
+    z-index: 900;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 24px 24px 40px;
+  }
+
+  /* ← メニューの行間を広めにする（押し間違え防止） */
+  .mobile-menu li + li {
+    margin-top: 20px;
+  }
+
+  .mobile-menu a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* ヘッダーぶん本文を下げる（隠れ防止） */
+  main {
+    padding-top: 80px;
+  }
+
+  /* ①②③のボックスの余白を少し詰めたい場合の例
+     クラス名が違う場合は、ここを実際のクラス名に変更してください */
+  .about-point,
+  .about-point-card {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 16px;
+  }
+}
