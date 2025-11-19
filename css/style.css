@@ -2301,6 +2301,21 @@ body {
   color: #555;
 }
 
+/* よくある質問のヒーロー画像をカード幅に合わせて整える */
+.faq-page .page-hero {
+  max-width: 960px;
+  margin: 0 auto 24px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.faq-page .page-hero img {
+  width: 100%;
+  height: 260px;      /* 高さをそろえたいときはここを調整 */
+  object-fit: cover;
+}
+
+
 /* ==========================
    FAQ 最終調整（色をはっきり分ける）
    ※ style.css の一番最後に置いてください
@@ -2363,8 +2378,3 @@ body {
   margin-top: 6px;
 }
 
-.faq-page .page-hero img {
-  width: 100%;
-  height: 260px;      /* 高さをそろえたいときはここを調整 */
-  object-fit: cover;
-}
