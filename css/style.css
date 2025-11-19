@@ -1905,11 +1905,34 @@ body {
   padding-left: 10px;
 }
 
+/* みんなの声：画像グリッド 1〜3列固定 */
+
 .voices-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 }
+
+/* スマホ：1列 */
+@media (max-width: 640px) {
+  .voices-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* タブレット：2列 */
+@media (min-width: 641px) and (max-width: 960px) {
+  .voices-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PC：3列 */
+@media (min-width: 961px) {
+  .voices-gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
 .voice-image-card {
   background: #ffffff;
