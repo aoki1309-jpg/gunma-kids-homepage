@@ -2378,3 +2378,121 @@ body {
   margin-top: 6px;
 }
 
+/* ==========================
+   写真の購入ページ
+   ========================== */
+
+/* ページ全体の幅・余白 */
+.photos-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+/* ヒーローコピー内でサイト名を少し強調 */
+.photos-site-name {
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+/* 共通セクション */
+.photos-section {
+  margin-top: 40px;
+}
+
+.photos-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
+}
+
+.photos-lead {
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+/* 特徴カードのグリッド */
+.photos-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.photos-feature-card {
+  background: #f7fbff;               /* うすい水色 */
+  border-radius: 16px;
+  padding: 18px 16px 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+}
+
+.photos-feature-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.photos-feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ステップ表示 */
+.photos-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.photos-step-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.photos-step-badge {
+  background: #ffe28a;
+  color: #333;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.photos-step-body h3 {
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+}
+
+.photos-step-body p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* 注意事項ブロック */
+.photos-notes {
+  background: #fcfffa;
+  border-radius: 16px;
+  padding: 20px 18px 22px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+}
+
+.photos-notes p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.photos-notes ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.photos-notes li {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
