@@ -2208,3 +2208,23 @@ body {
 .faq-item.open {
   background: #f1fff1;
 }
+
+.faq-question {
+  font-weight: 500;   /* これを追加 */
+}
+
+/* ==========================
+   FAQページのヘッダー画像を小さめに
+   ========================== */
+
+.faq-hero {
+  max-height: 260px;          /* 全体の高さを制限 */
+  overflow: hidden;           /* はみ出た部分は隠す */
+}
+
+.faq-hero img {
+  width: 100%;
+  height: 260px;              /* 高さ固定（保護者の声と同じくらい） */
+  object-fit: cover;          /* 画像をトリミングしてちょうどよく収める */
+  display: block;
+}
