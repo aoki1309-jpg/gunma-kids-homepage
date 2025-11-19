@@ -2072,81 +2072,104 @@ body {
 }
 
 /* ==========================
-   FAQ（よくある質問）
+   FAQ（かわいいデザイン）
    ========================== */
 
-.faq-page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 32px 16px 64px;
+/* セクション全体 */
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
 }
 
-/* セクションタイトル */
-.faq-list h2 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  border-left: 4px solid #2e7d32;
-  padding-left: 8px;
+/* タイトル */
+.faq-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
 }
 
-/* FAQアイテム全体 */
-.faq-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* 質問部分のデザイン */
+/* Q行 */
 .faq-question {
   width: 100%;
-  padding: 16px;
-  background: #f7fdf7;        /* やさしい薄緑 */
-  border: 2px solid #d9f1d9;
+  background: #f7fff7;
+  border: 2px solid #d8f5d8;
   border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 4px;
   font-size: 1rem;
   text-align: left;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: background 0.2s;
 }
 
-/* ホバー */
 .faq-question:hover {
-  background: #e7f6e7;
+  background: #edffed;
 }
 
-/* アイコン（動物・星などに差し替え可） */
-.faq-icon {
-  width: 22px;
-  height: 22px;
-  background-image: url("../images/icons/faq-icon.png"); /* ← 差し替え */
-  background-size: contain;
-  background-repeat: no-repeat;
+/* Qアイコン */
+.faq-q-icon {
+  background: #8adf8a;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
 }
 
-/* 回答部分（閉じた状態） */
+/* ▼アイコン */
+.faq-toggle {
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-left: auto;
+}
+
+/* A（回答） */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   background: #ffffff;
-  border-radius: 12px;
-  padding: 0 16px;
   border-left: 4px solid #2e7d32;
+  border-radius: 0 0 12px 12px;
+  padding: 0 18px;
   transition: max-height 0.35s ease;
 }
 
-/* 回答の文章 */
-.faq-answer p {
-  padding: 14px 0;
-  line-height: 1.8;
-  color: #444;
+/* Aアイコン */
+.faq-a-icon {
+  background: #ffe28a;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
 }
 
-/* 開いたときのスタイル */
+/* Aテキスト */
+.faq-answer p {
+  margin: 8px 0 16px;
+  padding-left: 6px;
+  line-height: 1.8;
+}
+
+/* 開いた時 */
 .faq-item.open .faq-answer {
-  max-height: 500px;
-  padding: 0 16px 14px;
+  max-height: 300px;
+}
+.faq-item.open .faq-toggle {
+  transform: rotate(180deg);
 }
