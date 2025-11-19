@@ -2362,3 +2362,9 @@ body {
   font-size: 0.85rem;
   margin-top: 6px;
 }
+
+.faq-page .page-hero img {
+  width: 100%;
+  height: 260px;      /* 高さをそろえたいときはここを調整 */
+  object-fit: cover;
+}
