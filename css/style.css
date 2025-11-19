@@ -2173,3 +2173,36 @@ body {
 .faq-item.open .faq-toggle {
   transform: rotate(180deg);
 }
+
+/* ==========================
+   FAQデザイン調整（枠が重ならないように）
+   ========================== */
+
+/* QとAの全体を包む item */
+.faq-item {
+  margin-bottom: 28px;   /* ← 前後のカード間の余白 */
+  padding-bottom: 4px;
+}
+
+/* Q の行 */
+.faq-question {
+  margin-bottom: 10px;   /* ← Q と A の間に余白を追加 */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 回答ブロック */
+.faq-answer {
+  margin-top: 6px;       /* ← Qからの距離調整 */
+  padding: 12px 18px 18px;
+  border-radius: 0 0 12px 12px;
+  background: #ffffff;
+  border-left: 4px solid #2e7d32;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* 回答テキストの余白 */
+.faq-answer p {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
