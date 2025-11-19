@@ -2057,13 +2057,17 @@ body {
   margin-top: 32px;   /* 上にゆとりをつくる */
 }
 
-.parents-page {
+/* 中ページ（保護者の声・みんなの声・よくある質問）の共通レイアウト */
+.parents-page,
+.voices-page,
+.faq-page {
   max-width: 960px;
   margin: 0 auto;
   padding: 32px 16px 64px;
-  background: #fcfffa;  /* ほぼ白の、うすい黄緑 */
+  background: #fcfffa;  /* ほぼ白の、うすい黄緑のカード背景 */
   border-radius: 16px;
 }
+
 
 .parents-intro-copy {
   font-size: 0.9rem;
