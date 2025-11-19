@@ -2032,10 +2032,17 @@ body {
   gap: 6px;
 }
 
-/* かわいいアイコン */
+/* 保護者の声：タイトル左の小さい動物アイコン */
 .parent-meta::before {
-  content: "✨";
-  font-size: 1rem;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  background-image: url("images/P_whaleShark-opt-1920.webp"); /* ← パスはアイコンの場所に合わせてね */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* 本文テキスト */
