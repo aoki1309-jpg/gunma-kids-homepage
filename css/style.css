@@ -2213,18 +2213,59 @@ body {
   font-weight: 500;   /* これを追加 */
 }
 
-/* ==========================
-   FAQページのヘッダー画像を小さめに
-   ========================== */
+/* Q&Aの背景色を分けて、見やすくする */
 
-.faq-hero {
-  max-height: 260px;          /* 全体の高さを制限 */
-  overflow: hidden;           /* はみ出た部分は隠す */
+.faq-item {
+  background: transparent;           /* 外側は透過しておく */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 18px;
 }
 
-.faq-hero img {
-  width: 100%;
-  height: 260px;              /* 高さ固定（保護者の声と同じくらい） */
-  object-fit: cover;          /* 画像をトリミングしてちょうどよく収める */
-  display: block;
+/* 質問行（Q） */
+.faq-question {
+  background: #f3fff3;              /* うすいミントグリーン */
+  border-radius: 14px;
+  padding: 10px 16px;
+  border-bottom: none;              /* 以前の下線はいらない */
+  margin-bottom: 6px;
+  font-weight: 500;                 /* 文字を少し太く */
 }
+
+/* 回答ブロック（A） */
+.faq-answer {
+  background: #fffdf3;              /* うすいクリーム色 */
+  border-radius: 14px;
+  padding: 10px 16px 12px;
+  margin-top: 0;                    /* 上の余白は0にしてQとの距離を調整 */
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* 開いたとき（Aの領域を展開） */
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding-top: 10px;
+}
+
+/* Q / A 丸アイコンを少し小さめ＆可愛く */
+.faq-q-icon {
+  background: #7dd97d;
+  width: 24px;
+  height: 24px;
+  font-size: 0.9rem;
+}
+
+.faq-a-icon {
+  background: #ffd87a;
+  width: 22px;
+  height: 22px;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
