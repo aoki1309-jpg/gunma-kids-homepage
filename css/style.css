@@ -2269,3 +2269,92 @@ body {
   margin-top: 6px;
 }
 
+/* 共通：ページ上部のヒーロー画像 */
+.page-hero img {
+  width: 100%;
+  height: 260px;           /* ここで縦の高さを統一 */
+  object-fit: cover;
+  display: block;
+}
+
+/* 共通：ヒーローの下のタイトル帯 */
+.page-hero-title {
+  background: #f4fbff;
+  padding: 24px 16px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 16px auto 32px;
+  max-width: 960px;
+}
+
+.page-hero-title h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.page-hero-title p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ==========================
+   FAQ 最終調整（色をはっきり分ける）
+   ※ style.css の一番最後に置いてください
+   ========================== */
+
+/* Q&A 全体の外枠（カード同士の間隔だけ確保） */
+.faq-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 20px;
+}
+
+/* 質問行（Q） */
+.faq-question {
+  background: #e9f7ff !important;   /* うすい水色 */
+  border-radius: 14px;
+  padding: 10px 16px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  border: none !important;
+}
+
+/* 回答ブロック（A） */
+.faq-answer {
+  background: #fff6e0 !important;   /* うすいクリーム色 */
+  border-radius: 14px;
+  padding: 0 16px 0;
+  margin-top: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* 開いたとき */
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Q / A 丸アイコンを少しだけ調整 */
+.faq-q-icon {
+  background: #54c86b;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  font-size: 0.9rem;
+}
+
+.faq-a-icon {
+  background: #ffcf6a;
+  width: 22px;
+  height: 22px;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
