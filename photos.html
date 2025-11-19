@@ -72,143 +72,155 @@
     </div>
   </header>
 
-  <!-- メイン -->
-   <!-- メインコンテンツ -->
-  <main class="photos-page">
+ <main class="photo-page">
 
-    <!-- ヒーロー部分 -->
-    <section class="travel-hero photos-hero">
-      <div class="travel-hero-image">
-        <!-- 画像ファイル名はお好みで変更OK（例：photos-opt-1920.webp） -->
-        <img src="photograph-opt-1920.webp" alt="写真の購入">
-      </div>
-      <div class="travel-hero-copy">
-        <h1>写真の購入（みんなのおもいで）</h1>
+  <!-- ヒーロー部分 -->
+  <section class="photo-hero">
+    <h1>写真の購入（みんなのおもいで）</h1>
+    <p>
+      旅の思い出写真は、写真販売サイト
+      <span class="photo-hero-site-name">「みんなのおもいで」</span> からご覧いただけます。<br>
+      各コースごとの「展示室」と、AI顔認証機能でお子さまの写真をかんたんに見つけられるサービスです。
+    </p>
+
+    <!-- みんなのおもいで へのボタン -->
+    <div class="photo-cta">
+      <!-- ★★★ URL を本物に変更してください ★★★ -->
+      <a href="https://example.com" target="_blank" class="photo-cta-btn" rel="noopener">
+        📷 「みんなのおもいで」のサイトへ
+      </a>
+      <p class="photo-cta-note">※外部サイト（みんなのおもいで）に移動します</p>
+    </div>
+  </section>
+
+  <!-- みんなのおもいで ってどんなサイト？ -->
+  <section class="photo-section">
+    <h2>「みんなのおもいで」ってどんなサイト？</h2>
+    <p class="photo-lead">
+      ぐんま子どもの旅で撮影した写真を、<br class="sp-only">
+      ご家庭のスマホやパソコンから、安心して見られる写真販売サイトです。
+    </p>
+
+    <div class="photo-feature-grid">
+      <!-- コース別展示室 -->
+      <article class="photo-feature-card photo-feature-card--green">
+        <h3>🏕 コース別の「展示室」</h3>
         <p>
-          旅の思い出写真は、写真販売サイト
-          <span class="photos-site-name">「みんなのおもいで」</span> からご覧いただけます。<br>
-          各コースごとの「展示室」と、<strong>AI顔認証機能</strong>で、お子さまの写真をかんたんに見つけられます。
+          春の旅・夏の旅など、コースごとに専用の展示室をご用意しています。<br>
+          チラシに記載された QRコード または 展示室コード から、<br>
+          お子さまの参加したコースだけを見られます。
         </p>
-      </div>
-    </section>
+      </article>
 
-    <!-- サイトの特徴 -->
-    <section class="photos-section">
-      <h2>「みんなのおもいで」ってどんなサイト？</h2>
-      <p class="photos-lead">
-        ぐんま子どもの旅で撮影した写真を、<br>
-        ご家庭のスマホやパソコンから、安心して見ることができる写真販売サイトです。
-      </p>
+      <!-- 顔認証 -->
+      <article class="photo-feature-card photo-feature-card--yellow">
+        <h3>😊 顔認証でラクラク検索</h3>
+        <p>
+          サイト内の顔認証機能を使うと、1枚お子さまの顔写真を登録するだけで、<br>
+          似ている顔の写真を自動でピックアップしてくれます。<br>
+          たくさんの写真から「うちの子」を探す手間がぐっと少なくなります。
+        </p>
+      </article>
 
-      <div class="photos-feature-grid">
-        <div class="photos-feature-card">
-          <h3>🖼 コース別の「展示室」</h3>
+      <!-- スマホで かんたん閲覧・購入 -->
+      <article class="photo-feature-card photo-feature-card--blue">
+        <h3>📱 スマホでかんたん閲覧・購入</h3>
+        <p>
+          スマホ・タブレット・パソコンから、いつでも好きな時間に写真をチェックできます。<br>
+          気に入った写真は、ダウンロード版やプリント写真として購入することができます。
+        </p>
+      </article>
+
+      <!-- 安心のログイン方式 -->
+      <article class="photo-feature-card photo-feature-card--orange">
+        <h3>🔒 安心のログイン方式</h3>
+        <p>
+          展示室毎に発行されるパスワードや認証コードを使ってログインします。<br>
+          関係のない方が写真を見ることができないよう、セキュリティにも配慮された仕組みです。
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ご利用の流れ -->
+  <section class="photo-section photo-flow">
+    <h2>ご利用の流れ</h2>
+
+    <ol class="photo-step-list">
+      <li class="photo-step-item">
+        <div class="photo-step-badge">STEP 1</div>
+        <div class="photo-step-body">
+          <h3>チラシのQRコードから展示室へ</h3>
           <p>
-            春の旅・夏の旅など、<br>
-            コースごとに専用の展示室をご用意しています。<br>
-            チラシに記載された <strong>QRコード</strong> または <strong>展示室コード</strong> から、
-            お子さまの参加したコースだけを見られます。
+            旅の後にお配りする「写真販売のご案内」チラシに、<br>
+            コースごとの QRコード と 展示室コード が記載されています。<br>
+            お手持ちのスマホでQRコードを読み取るか、URLにコードを入力してアクセスします。
           </p>
         </div>
+      </li>
 
-        <div class="photos-feature-card">
-          <h3>🙂 顔認証でラクラク検索</h3>
+      <li class="photo-step-item">
+        <div class="photo-step-badge">STEP 2</div>
+        <div class="photo-step-body">
+          <h3>初回登録 &amp; ログイン</h3>
           <p>
-            サイト内の<strong>顔認証機能</strong>を使うと、<br>
-            1枚お子さまの顔写真を登録するだけで、<br>
-            似ている顔の写真を自動でピックアップしてくれます。<br>
-            たくさんの写真から「うちの子」を探す手間がぐっと少なくなります。
+            はじめての方は、案内にしたがって会員登録を行います。<br>
+            メールアドレスとパスワードを設定すると、次回からスムーズにログインできます。
           </p>
         </div>
+      </li>
 
-        <div class="photos-feature-card">
-          <h3>📱 スマホでかんたん閲覧・購入</h3>
+      <li class="photo-step-item">
+        <div class="photo-step-badge">STEP 3</div>
+        <div class="photo-step-body">
+          <h3>顔認証 or 一覧から写真をチェック</h3>
           <p>
-            スマホ・タブレット・パソコンから、<br>
-            いつでも好きな時間に写真をチェックできます。<br>
-            気に入った写真は、<strong>ダウンロード版</strong>や<strong>プリント写真</strong>として購入することができます。
+            顔認証機能を使う場合は、お子さまの顔がはっきり写っている写真を1枚アップロードします。<br>
+            サイトが自動で似ている写真を探してくれるので、候補の中からゆっくりお選びください。<br>
+            顔認証を使わずに、一覧表示や場面別のカテゴリから探すこともできます。
           </p>
         </div>
+      </li>
 
-        <div class="photos-feature-card">
-          <h3>🔐 安心のログイン方式</h3>
+      <li class="photo-step-item">
+        <div class="photo-step-badge">STEP 4</div>
+        <div class="photo-step-body">
+          <h3>カートに入れてご購入</h3>
           <p>
-            展示室毎に発行される<strong>パスワード</strong>や<strong>認証コード</strong>を使ってログインします。<br>
-            関係のない方が写真を見ることができないよう、<br>
-            セキュリティにも配慮された仕組みです。
+            欲しい写真をカートに入れたら、案内にしたがって購入手続きへ進みます。<br>
+            料金やお支払い方法、送料などの詳細は「みんなのおもいで」サイト内でご確認ください。
           </p>
         </div>
-      </div>
-    </section>
+      </li>
+    </ol>
 
-    <!-- つかいかたステップ -->
-    <section class="photos-section">
-      <h2>ご利用の流れ</h2>
+    <!-- 下部にもリンクボタンをもう一度 -->
+    <div class="photo-cta photo-cta--bottom">
+      <a href="https://minnanoomoide.com/" target="_blank" class="photo-cta-btn" rel="noopener">
+        📷 写真を見に行く（みんなのおもいで）
+      </a>
+    </div>
+  </section>
 
-      <ol class="photos-step-list">
-        <li>
-          <div class="photos-step-badge">STEP 1</div>
-          <div class="photos-step-body">
-            <h3>チラシのQRコードから展示室へ</h3>
-            <p>
-              旅の後にお配りする「写真販売のご案内」チラシに、<br>
-              コースごとの <strong>QRコード</strong> と <strong>展示室コード</strong> が記載されています。<br>
-              お手持ちのスマホでQRコードを読み取るか、URLにコードを入力してアクセスします。
-            </p>
-          </div>
-        </li>
+  <!-- 保護者のみなさまへ -->
+  <section class="photo-section photo-message">
+    <h2>保護者のみなさまへ</h2>
+    <p>
+      子どもたちが一生懸命がんばった姿や、友だちと笑い合う瞬間を、<br>
+      ご家庭でゆっくり振り返っていただけるように、写真販売の仕組みを整えています。
+    </p>
+    <p>
+      展示室コードやパスワードは、第三者へは教えないようご注意ください。<br>
+      写真の取り扱い・SNS等への掲載については、各ご家庭でマナーを守ってご利用ください。
+    </p>
+    <p>
+      操作方法でご不明点があれば、チラシ記載のサポート窓口または
+      「ぐんま子どもの旅」までお問い合わせください。
+    </p>
+  </section>
 
-        <li>
-          <div class="photos-step-badge">STEP 2</div>
-          <div class="photos-step-body">
-            <h3>初回登録 &amp; ログイン</h3>
-            <p>
-              はじめての方は、案内にしたがって<strong>会員登録</strong>を行います。<br>
-              メールアドレスとパスワードを設定すると、次回からスムーズにログインできます。
-            </p>
-          </div>
-        </li>
+</main>
 
-        <li>
-          <div class="photos-step-badge">STEP 3</div>
-          <div class="photos-step-body">
-            <h3>顔認証 or 一覧から写真をチェック</h3>
-            <p>
-              顔認証機能を使う場合は、お子さまの顔がはっきり写っている写真を1枚アップロードします。<br>
-              サイトが自動で似ている写真を探してくれるので、候補の中からゆっくりお選びください。<br>
-              顔認証を使わずに、<strong>一覧表示や場面別のカテゴリ</strong>から探すこともできます。
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <div class="photos-step-badge">STEP 4</div>
-          <div class="photos-step-body">
-            <h3>カートに入れてご購入</h3>
-            <p>
-              欲しい写真をカートに入れたら、案内にしたがって購入手続きへ進みます。<br>
-              料金やお支払い方法、送料などの詳細は「みんなのおもいで」サイト内でご確認ください。
-            </p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- 保護者の方へのひとこと -->
-    <section class="photos-section photos-notes">
-      <h2>保護者のみなさまへ</h2>
-      <p>
-        子どもたちが一生懸命がんばった姿や、友だちと笑い合う瞬間を、<br>
-        ご家庭でもゆっくり振り返っていただけるように、写真販売の仕組みを整えています。
-      </p>
-      <ul>
-        <li>展示室コードやパスワードは、第三者へは教えないようご注意ください。</li>
-        <li>写真の取り扱い・SNS等への掲載については、各ご家庭でもマナーを守ってご利用ください。</li>
-        <li>操作方法でご不明な点があれば、チラシ記載のサポート窓口または「ぐんま子どもの旅」までお問い合わせください。</li>
-      </ul>
-    </section>
-
-  </main>
   <!-- /メインコンテンツ -->
 
 
