@@ -2039,7 +2039,7 @@ body {
   width: 20px;
   height: 20px;
   margin-right: 6px;
-  background-image: url("hiyoko Image.png"); /* ← パスはアイコンの場所に合わせてね */
+  background-image: url("images/hiyoko Image.png"); /* ← パスはアイコンの場所に合わせてね */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
