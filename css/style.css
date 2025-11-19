@@ -2072,17 +2072,16 @@ body {
 }
 
 /* ==========================
-   FAQ（かわいいデザイン）
+   FAQ（よくある質問）カード型
    ========================== */
 
-/* セクション全体 */
 .faq-section {
   max-width: 900px;
   margin: 40px auto;
-  padding: 0 16px;
+  padding: 0 16px 48px;
 }
 
-/* タイトル */
+/* 見出し */
 .faq-section h2 {
   font-size: 1.6rem;
   margin-bottom: 24px;
@@ -2090,119 +2089,94 @@ body {
   padding-left: 10px;
 }
 
-/* Q行 */
+/* 1つのQ&Aカード全体 */
+.faq-item {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  padding: 14px 18px 16px;
+  margin-bottom: 20px;
+}
+
+/* ▼ いったん全部リセット（前のCSSの影響を消す） */
+.faq-item .faq-question,
+.faq-item .faq-answer {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 質問行 */
 .faq-question {
   width: 100%;
-  background: #f7fff7;
-  border: 2px solid #d8f5d8;
-  border-radius: 12px;
-  padding: 16px 18px;
-  margin-bottom: 4px;
-  font-size: 1rem;
-  text-align: left;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: background 0.2s;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.faq-question:hover {
-  background: #edffed;
-}
-
-/* Qアイコン */
+/* Q丸アイコン */
 .faq-q-icon {
   background: #8adf8a;
   color: #fff;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 6px;
-}
-
-/* ▼アイコン */
-.faq-toggle {
-  font-size: 1.2rem;
-  color: #2e7d32;
-  margin-left: auto;
-}
-
-/* A（回答） */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  background: #ffffff;
-  border-left: 4px solid #2e7d32;
-  border-radius: 0 0 12px 12px;
-  padding: 0 18px;
-  transition: max-height 0.35s ease;
-}
-
-/* Aアイコン */
-.faq-a-icon {
-  background: #ffe28a;
-  color: #333;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 50%;
   width: 26px;
   height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 12px;
+  flex-shrink: 0;
 }
 
-/* Aテキスト */
+/* ▼マーク */
+.faq-toggle {
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  transition: transform 0.2s;
+}
+
+/* 回答ブロック（閉じているとき） */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+/* A丸アイコン */
+.faq-a-icon {
+  background: #ffe28a;
+  color: #333;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+/* 回答テキスト */
 .faq-answer p {
-  margin: 8px 0 16px;
-  padding-left: 6px;
+  margin: 10px 0 4px;
   line-height: 1.8;
 }
 
-/* 開いた時 */
+/* 開いたとき */
 .faq-item.open .faq-answer {
-  max-height: 300px;
+  max-height: 500px;      /* 回答の高さに合わせて余裕をもたせる */
+  margin-top: 6px;
 }
+
 .faq-item.open .faq-toggle {
   transform: rotate(180deg);
-}
-
-/* ==========================
-   FAQデザイン調整（枠が重ならないように）
-   ========================== */
-
-/* QとAの全体を包む item */
-.faq-item {
-  margin-bottom: 28px;   /* ← 前後のカード間の余白 */
-  padding-bottom: 4px;
-}
-
-/* Q の行 */
-.faq-question {
-  margin-bottom: 10px;   /* ← Q と A の間に余白を追加 */
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-/* 回答ブロック */
-.faq-answer {
-  margin-top: 6px;       /* ← Qからの距離調整 */
-  padding: 12px 18px 18px;
-  border-radius: 0 0 12px 12px;
-  background: #ffffff;
-  border-left: 4px solid #2e7d32;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-}
-
-/* 回答テキストの余白 */
-.faq-answer p {
-  margin-top: 10px;
-  margin-bottom: 4px;
 }
