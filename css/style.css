@@ -2180,3 +2180,31 @@ body {
 .faq-item.open .faq-toggle {
   transform: rotate(180deg);
 }
+
+/* ===== FAQカードの見た目を少しはっきりさせる ===== */
+
+/* 1つのQ&Aカード全体 */
+.faq-item {
+  background: #f7fff7;                 /* うすい黄緑の背景 */
+  border: 1px solid #d8f5d8;           /* うすい枠線 */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  padding: 16px 20px 18px;
+  margin-bottom: 22px;
+}
+
+/* 質問行の下にうすい仕切り線を入れる */
+.faq-question {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #d8f0d8;
+}
+
+/* 回答ブロックの上の余白を少し広げる */
+.faq-answer {
+  margin-top: 8px;
+}
+
+/* 開いているカードは、ちょっとだけ濃い背景に */
+.faq-item.open {
+  background: #f1fff1;
+}
