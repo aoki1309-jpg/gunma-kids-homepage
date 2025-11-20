@@ -4,7 +4,20 @@ body {
     system-ui, sans-serif;
   color: #333;
   background: #fff;
+  font-size: 16px;  
 }
+
+/* 本文全体の行間を広げて読みやすくする（フッターには効かない） */
+main {
+  line-height: 1.7;
+}
+
+/* 本文とリストの標準文字サイズを少しだけ小さめにして、優しく */
+main p,
+main li {
+  font-size: 0.95rem;
+}
+
 
 .container {
   width: 1160px;
