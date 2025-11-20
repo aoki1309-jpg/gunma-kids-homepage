@@ -2926,3 +2926,27 @@ body {
   margin-top: 8px;
 }
 
+/* LINE ボタン */
+.contact-line-button-wrap {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.contact-line-button {
+  display: inline-block;
+  background: #06C755;             /* LINEの緑 */
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-line-button:hover {
+  background: #05b94e;
+  transform: translateY(-2px);
+}
