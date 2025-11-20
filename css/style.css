@@ -2820,3 +2820,57 @@ body {
   text-decoration: underline;
 }
 
+/* 共通：画像つきヒーロー（旅について / みんなの声 / FAQ など） */
+.travel-hero {
+  max-width: 960px;
+  margin: 0 auto 32px;
+  background: #fcfffa;          /* うすい黄緑のカード背景 */
+  border-radius: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.travel-hero-image {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.travel-hero-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.travel-hero-copy {
+  flex: 1 1 320px;
+  padding: 24px 24px 28px;
+  text-align: center;
+}
+
+.travel-hero-copy h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.travel-hero-copy p {
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* スマホでの縦並び調整 */
+@media (max-width: 768px) {
+  .travel-hero-image img {
+    height: 220px;
+  }
+
+  .travel-hero-copy {
+    padding: 18px 16px 24px;
+  }
+
+  .travel-hero-copy h1 {
+    font-size: 1.5rem;
+  }
+}
