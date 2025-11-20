@@ -2698,3 +2698,125 @@ body {
     display: inline;
   }
 }
+
+/* ==========================
+   お問い合わせ
+========================== */
+
+.contact-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.contact-hero {
+  background: #f5fbff;
+  padding: 24px 18px 28px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.contact-hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+/* セクション共通 */
+.contact-section {
+  margin-bottom: 42px;
+}
+
+.contact-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  border-left: 6px solid #2e7d32;
+  padding-left: 12px;
+}
+
+/* LINE */
+.contact-line-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f0fff4;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.contact-line-qr {
+  width: 120px;
+  height: auto;
+}
+
+.contact-small {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* メールフォーム */
+.contact-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+}
+
+.required {
+  background: #ff9999;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* 送信ボタン */
+.contact-submit {
+  width: 100%;
+  padding: 12px;
+  background: #2e7d32;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  opacity: 0.9;
+}
+
+/* 電話 */
+.contact-phone {
+  font-size: 1.2rem;
+  padding: 12px;
+  background: #fff9e8;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+/* リンク集 */
+.contact-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-links li {
+  margin-bottom: 8px;
+}
+
+.contact-links a {
+  color: #2e7d32;
+  font-weight: bold;
+  text-decoration: underline;
+}
+

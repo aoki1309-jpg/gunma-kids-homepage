@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>みんなの声 | ぐんま子どもの旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="top-page">
+  <header class="mobile-header">
+    <div class="mobile-header-inner">
+      <div class="mobile-header-left">
+        <img
+          src="images/kodomonotabilogo.png?v=2"
+          alt="ぐんま子どもの旅ロゴ"
+          class="mobile-header-logo"
+        />
+        <div class="mobile-header-title">ぐんま子どもの旅</div>
+      </div>
+      <button
+        id="hamburger-btn"
+        class="hamburger-btn"
+        aria-label="メニュー"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- スマホ用メニュー -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="スマホ用メニュー">
+    <ul>
+      <li><a href="aboutus.html">わたしたちについて</a></li>
+      <li><a href="abouttravel.html">旅について</a></li>
+      <li><a href="application.html">お申込み</a></li>
+      <li><a href="voices.html">みんなの声</a></li>
+      <li><a href="parents.html">保護者の声</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="policies.html">ご利用規約・各種ポリシー</a></li>
+      <li><a href="photos.html">写真の購入</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- ▲▲ スマホ用ヘッダー＆メニュー ▲▲ -->
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <!-- ★ここを実際のロゴ画像名に変更してね -->
+        <img src="images/kodomonotabilogo.png?v=2" alt="ぐんま子どもの旅ロゴ" />
+        <div class="company-name">ぐんま子どもの旅</div>
+      </a>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="aboutus.html">わたしたちについて</a></li>
+          <li><a href="abouttravel.html">旅について</a></li>
+          <li><a href="application.html">お申込み</a></li>
+          <li><a href="voices.html">みんなの声</a></li>
+          <li><a href="parents.html">保護者の声</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="policies.html">ご利用規約・各種ポリシー</a></li>
+          <li><a href="photos.html">写真の購入</a></li>
+          <li class="contact-link"><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <main class="contact-page">
+
+  <!-- ヒーロー -->
+  <section class="contact-hero">
+    <h1>お問い合わせ</h1>
+    <p>
+      ご不明点やご相談は、以下の方法からお気軽にお問い合わせください。<br>
+      LINE・メールフォーム・お電話、どれでもご利用いただけます。
+    </p>
+  </section>
+
+  <!-- LINE -->
+  <section class="contact-section">
+    <h2>LINEでお問い合わせ</h2>
+    <p>もっとも手軽でスムーズな方法です。</p>
+
+    <div class="contact-line-box">
+      <img src="images/line_qr.png" alt="LINE QRコード" class="contact-line-qr">
+      <div class="contact-line-text">
+        <p>友だち追加してトークからご相談ください。</p>
+        <p class="contact-small">※ 返信時間：平日 10:00〜17:00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- メールフォーム -->
+  <section class="contact-section">
+    <h2>メールフォームでお問い合わせ</h2>
+    <p>必要事項をご入力の上、送信してください。</p>
+
+    <form class="contact-form">
+      <label>
+        保護者のお名前 <span class="required">必須</span>
+        <input type="text" name="parent_name" required>
+      </label>
+
+      <label>
+        メールアドレス <span class="required">必須</span>
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        お子さまのお名前
+        <input type="text" name="child_name">
+      </label>
+
+      <label>
+        コース名
+        <select name="course">
+          <option value="">選択してください</option>
+          <option>春の旅</option>
+          <option>夏の旅</option>
+          <option>その他の旅</option>
+        </select>
+      </label>
+
+      <label>
+        お問い合わせ内容 <span class="required">必須</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit" class="contact-submit">送信する</button>
+    </form>
+  </section>
+
+  <!-- 電話 -->
+  <section class="contact-section">
+    <h2>お急ぎの場合のお問い合わせ</h2>
+    <p>緊急時または至急のご相談はこちらから。</p>
+
+    <div class="contact-phone">
+      📞 027-257-4939  
+      <span class="contact-small">(平日 10:00〜17:00)</span>
+    </div>
+  </section>
+
+  <!-- まずはこちら -->
+  <section class="contact-section contact-links">
+    <h2>お問い合わせの前に</h2>
+    <ul>
+      <li><a href="faq.html">よくある質問を見る</a></li>
+      <li><a href="policies.html">ご利用規約・各種ポリシー</a></li>
+      <li><a href="application.html">お申込みについて</a></li>
+    </ul>
+  </section>
+
+</main>
+
+
+  <!-- /メインコンテンツ -->
+
+
+
+
+
+    <!-- 会社情報・お問い合わせブロック -->
+  <section class="contact-summary-section">
+    <div class="contact-summary-inner">
+      <!-- 左側：会社情報 -->
+      <div class="contact-summary-left">
+        <p class="contact-summary-label">株式会社</p>
+        <p class="contact-summary-name">ぐんま子どもの旅</p>
+
+        <p class="contact-summary-address">
+          〒371-0002<br />
+          群馬県前橋市江木町1176-5
+        </p>
+
+        <p class="contact-summary-link">
+          <a href="https://www.kodomo-kai.or.jp/gunma/" target="_blank" rel="noopener">
+            公益社団法人 群馬県子ども会育成連合会
+          </a>
+        </p>
+      </div>
+
+      <!-- 右側：お問い合わせ -->
+      <div class="contact-summary-right">
+        <p class="contact-summary-heading">お問い合わせ</p>
+
+        <p class="contact-summary-tel-label">Tel.</p>
+        <p class="contact-summary-tel-number">027-257-4939</p>
+
+        <p class="contact-summary-tel-label">Fax.</p>
+        <p class="contact-summary-tel-number">027-257-4939</p>
+
+        <p class="contact-summary-hours">
+          受付時間：平日10：00 ～ 15：00（土日祝休み）
+        </p>
+
+        <a href="contact.html" class="contact-summary-button">
+          <span class="contact-summary-button-icon">✉</span>
+          <span>お問い合わせフォーム</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- 左：ロゴ＋名前 -->
+    <div class="footer-brand">
+      <div class="footer-logo-row">
+        <img src="images/kodomonotabilogo.png?v=2" alt="ぐんま子どもの旅ロゴ" class="footer-logo" />
+        <span class="footer-title">ぐんま子どもの旅</span>
+      </div>
+      <p class="footer-copy">
+        子どもたちに、はじめての冒険を。
+      </p>
+    </div>
+
+    <!-- 右：リンク -->
+    <div class="footer-links">
+
+      <!-- メニュー -->
+      <nav class="footer-nav" aria-label="フッターナビ">
+        <a href="aboutus.html">わたしたちについて</a>
+        <a href="abouttravel.html">旅について</a>
+        <a href="application.html">お申込み</a>
+        <a href="voices.html">みんなの声</a>
+        <a href="parents.html">保護者の声</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="photos.html">写真の購入</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+
+      <!-- ポリシー（丸いタグ） -->
+      <div class="footer-policies">
+        <span class="footer-pill"><a href="policies.html">ご利用規約・各種ポリシー</a></span>
+        <span class="footer-pill"><a href="travel-conditions.html">旅行条件書</a></span>
+        <span class="footer-pill"><a href="privacy.html">プライバシーポリシー</a></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 ぐんま子どもの旅</p>
+    <p>お問い合わせ：info.gunma@kodomonotabi.net</p>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQアコーディオン動作
+    document.querySelectorAll(".faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+</html>
