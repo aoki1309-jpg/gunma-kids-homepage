@@ -2820,3 +2820,108 @@ body {
   text-decoration: underline;
 }
 
+/* ========== お問い合わせページ ========== */
+
+.contact-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+.contact-section {
+  background: #fcfffa;
+  border-radius: 16px;
+  padding: 20px 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.contact-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.contact-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* LINEボックス */
+.contact-line-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.contact-line-qr {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* フォーム */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  border: 1px solid #d0e7d3;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.required {
+  color: #e57373;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+.contact-submit {
+  margin-top: 4px;
+  align-self: flex-start;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  background: #43a047;
+}
+
+.contact-small {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* 電話表示 */
+.contact-phone {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
