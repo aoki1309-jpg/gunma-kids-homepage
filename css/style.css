@@ -4,14 +4,6 @@ body {
     system-ui, sans-serif;
   color: #333;
   background: #fff;
-  line-height: 1.7;       /* ← 行間広めで読みやすく */
-  font-size: 16px;        /* ← 全体の基準文字サイズ */
-}
-
-/* 本文とリストの標準文字サイズを少しだけ小さめにして、優しく */
-main p,
-main li {
-  font-size: 0.95rem;
 }
 
 .container {
@@ -330,23 +322,6 @@ header {
   .container {
     padding: 0 18px;   /* お好みで 16〜20px あたり */
     box-sizing: border-box;
-  }
-
-  .page-hero-title h1 {
-    font-size: 1.4rem;
-  }
-
-  .page-hero-title p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
-  .faq-section h2 {
-    font-size: 1.3rem;
-  }
-
-  .faq-question-text {
-    font-size: 0.9rem;
   }
 }
 /* ===== heroエリアの余白リセット＆調整 ===== */
