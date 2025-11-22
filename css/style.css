@@ -1058,7 +1058,7 @@ body {
   margin-top: 16px;
   text-align: center;
   padding: 16px;
-  background: #c8e6faff;        /* うすい水色 */
+  background: #f5fbff;        /* うすい水色 */
   border-radius: 12px;
 }
 
@@ -1229,7 +1229,7 @@ body {
 
 /* やさしい背景色をつけた強調セクション */
 .about-section--highlight {
-  background: #d2fad2ff;              /* うすい黄緑寄りの白 */
+  background: #f3fff3;              /* うすい黄緑寄りの白 */
   border-radius: 12px;
   padding: 24px 24px 28px;          /* 中の余白をしっかり取る */
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
