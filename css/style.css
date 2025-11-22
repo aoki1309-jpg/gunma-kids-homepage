@@ -2968,3 +2968,17 @@ body {
   background: #05b94e;
   transform: translateY(-2px);
 }
+
+/* Q（質問行）を左揃えに統一 */
+.faq-question {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important; /* ★左揃えの決定打 */
+  text-align: left !important;            /* 念のため */
+}
+
+/* Q の丸アイコン */
+.faq-q-icon {
+  text-align: center;
+  margin-right: 8px;
+}
