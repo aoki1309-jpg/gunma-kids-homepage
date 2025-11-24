@@ -2983,3 +2983,31 @@ body {
   margin-right: 8px;
 }
 
+/* ───────────────
+   トップ：知りたいことからえらぶ（セクションの外にあるh2用）
+   ─────────────── */
+.sections-grid-title {
+  /* .container を一緒につけているので左右幅は既に揃っています */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  margin: 0 auto 1.8rem;   /* 下に少しスペース */
+  padding: 0.6rem 1.8rem;
+
+  border-radius: 999px;
+  background: #e9f7f4;     /* うすい水色（お好みで変更OK） */
+  color: #1f6b5b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 両サイドの小さい飾り */
+.sections-grid-title::before,
+.sections-grid-title::after {
+  content: "✳";
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
