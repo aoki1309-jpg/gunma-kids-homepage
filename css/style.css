@@ -2982,3 +2982,19 @@ body {
   text-align: center;
   margin-right: 8px;
 }
+
+/* トップページ「知りたいことからえらぶ」レイアウト調整 */
+.sections-area {
+  padding: 80px 0;
+}
+
+.sections-area .sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.sections-area .sections-grid-title {
+  margin-bottom: 24px;
+}
