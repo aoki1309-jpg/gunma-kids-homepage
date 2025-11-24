@@ -2,12 +2,48 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>みんなの声 | ぐんま子どもの旅</title>
+
+  <!-- ★ ページタイトル -->
+  <title>写真の購入（みんなのおもいで） - ぐんま子どもの旅 公式サイト</title>
+
+  <!-- ★ このページ専用の説明文 -->
+  <meta
+    name="description"
+    content="ぐんま子どもの旅で撮影した写真は、写真販売サイト「みんなのおもいで」からご覧いただけます。コース別の展示室やAI顔認証機能で、お子さまの写真をスマホやパソコンからかんたんに探せます。"
+  />
+
+  <!-- スマホ対応 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- OGP（SNS共有用） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ぐんま子どもの旅" />
+  <meta
+    property="og:title"
+    content="写真の購入（みんなのおもいで） - ぐんま子どもの旅 公式サイト"
+  />
+  <meta
+    property="og:description"
+    content="ぐんま子どもの旅で撮影した写真を、「みんなのおもいで」からご覧いただけます。コース別展示室とAI顔認証機能で、たくさんの写真の中からお子さまの姿をかんたんに見つけられます。"
+  />
+  <meta property="og:url" content="https://kodomonotabi.net/photos.html" />
+  <meta property="og:image" content="https://kodomonotabi.net/images/ogp-top.jpg" />
+
+  <!-- X(Twitter)カード -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- このページの正式URL -->
+  <link rel="canonical" href="https://kodomonotabi.net/photos.html" />
+
+  <!-- CSS・フォント -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body class="top-page">
   <header class="mobile-header">
     <div class="mobile-header-inner">
@@ -321,15 +357,6 @@
 </footer>
 
 
-  <script src="js/main.js"></script>
-  <script>
-    // FAQアコーディオン動作
-    document.querySelectorAll(".faq-question").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const item = btn.parentElement;
-        item.classList.toggle("open");
-      });
-    });
-  </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
