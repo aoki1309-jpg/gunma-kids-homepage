@@ -36,11 +36,37 @@
 
   <!-- CSS・フォント（今までどおり）。フォントリンクは1つでOKなので片方だけ残す -->
   <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/style.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- 構造化データ（Organization） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ぐんま子どもの旅",
+    "url": "https://kodomonotabi.net/",
+    "logo": "https://kodomonotabi.net/images/kodomonotabilogo.png",
+    "telephone": "+81-27-257-4939",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "江木町1176-5",
+      "addressLocality": "前橋市",
+      "addressRegion": "群馬県",
+      "postalCode": "371-0002",
+      "addressCountry": "JP"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+81-27-257-4939",
+      "contactType": "customer service",
+      "availableLanguage": "ja"
+    }
+  }
+  </script>
+
 </head>
 
 <body class="top-page">
