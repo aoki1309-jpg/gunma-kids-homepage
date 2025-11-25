@@ -3011,3 +3011,66 @@ body {
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
+/* ========== 声・FAQの下に入れる写真ギャラリー ========== */
+
+.voice-photos {
+  margin-top: 48px;
+  padding: 24px 16px 32px;
+  background: #fdf9e8; /* ほんのりクリーム色：サイト全体と合うやさしい色 */
+  border-radius: 16px;
+}
+
+.voice-photos-title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #4a7e5a; /* やさしい緑（既存の薄い緑系に寄せるイメージ） */
+}
+
+.voice-photos-lead {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 写真を小さめ＆複数枚でかわいく */
+.voice-photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 1枚1枚のカード */
+.voice-photo-card {
+  width: 140px;                 /* PCではやや小さめ */
+  aspect-ratio: 4 / 3;          /* 横長に統一（写真サイズが多少違っても揃う） */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ふわっと浮くホバー（PCのみのちょっとした遊び） */
+.voice-photo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.voice-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* スマホでは2列にして見やすく */
+@media (max-width: 768px) {
+  .voice-photo-card {
+    width: calc(50% - 12px);
+  }
+}
