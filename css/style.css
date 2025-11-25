@@ -3043,22 +3043,57 @@ body {
   gap: 12px;
 }
 
-/* 1枚1枚のカード */
+/* 1枚1枚のカード（ランダム感つきバージョン） */
 .voice-photo-card {
-  width: 140px;                 /* PCではやや小さめ */
-  aspect-ratio: 4 / 3;          /* 横長に統一（写真サイズが多少違っても揃う） */
-  border-radius: 16px;
+  width: 140px;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  /* ランダム風レイアウト用の変数 */
+  --shiftX: 0px;
+  --shiftY: 0px;
+  --rot: 0deg;
+
+  transform: translate(var(--shiftX), var(--shiftY)) rotate(var(--rot));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ふわっと浮くホバー（PCのみのちょっとした遊び） */
+/* ちょっとランダムっぽくバラす（6枚ごとにパターン） */
+.voice-photos-grid .voice-photo-card:nth-child(6n + 1) {
+  --shiftY: -10px;
+  --rot: -4deg;
+}
+.voice-photos-grid .voice-photo-card:nth-child(6n + 2) {
+  --shiftY: 8px;
+  --rot: 3deg;
+}
+.voice-photos-grid .voice-photo-card:nth-child(6n + 3) {
+  --shiftY: -16px;
+  --rot: 2deg;
+}
+.voice-photos-grid .voice-photo-card:nth-child(6n + 4) {
+  --shiftY: 12px;
+  --rot: -5deg;
+}
+.voice-photos-grid .voice-photo-card:nth-child(6n + 5) {
+  --shiftY: -6px;
+  --rot: 4deg;
+}
+.voice-photos-grid .voice-photo-card:nth-child(6n + 6) {
+  --shiftY: 14px;
+  --rot: -3deg;
+}
+
+/* ホバー時：その位置からふわっと浮く感じ */
 .voice-photo-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  transform: translate(var(--shiftX), calc(var(--shiftY) - 8px))
+    rotate(var(--rot))
+    scale(1.03);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
 }
 
 .voice-photo-card img {
@@ -3068,14 +3103,25 @@ body {
   display: block;
 }
 
-/* ちょっとランダムっぽく上下にズラす */
-.voice-photo-card:nth-child(2n) {
-  transform: translateY(4px);
+/* スマホでは少しだけ落ち着かせる */
+@media (max-width: 768px) {
+  .voice-photo-card {
+    width: calc(50% - 12px);
+    /* スマホは傾き少なめにしたいときは、ここで調整してもOK */
+  }
+
+  /* スマホのときは揺らぎを少し弱めるパターン */
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 1),
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 2),
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 3),
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 4),
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 5),
+  .voice-photos-grid .voice-photo-card:nth-child(6n + 6) {
+    --shiftY: 4px;
+    --rot: 0deg;
+  }
 }
 
-.voice-photo-card:nth-child(3n) {
-  transform: translateY(-4px);
-}
 
 
 /* スマホでは2列にして見やすく */
