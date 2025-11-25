@@ -3068,9 +3068,20 @@ body {
   display: block;
 }
 
+/* ちょっとランダムっぽく上下にズラす */
+.voice-photo-card:nth-child(2n) {
+  transform: translateY(4px);
+}
+
+.voice-photo-card:nth-child(3n) {
+  transform: translateY(-4px);
+}
+
+
 /* スマホでは2列にして見やすく */
 @media (max-width: 768px) {
   .voice-photo-card {
     width: calc(50% - 12px);
   }
 }
+
