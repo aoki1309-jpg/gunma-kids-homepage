@@ -3129,9 +3129,13 @@ body {
 }
 /* ========== にじまるニュース ========== */
 
+/* ========== にじまるニュース（調整版） ========== */
+
 .nijimaru-news {
   padding: 32px 0;
-  background: #f5fbff; /* うすい水色：サイト全体とトーンを合わせてOK */
+  background: #fff8e5; /* すこし黄みがかった背景 → お知らせ感UP */
+  border-top: 3px solid #ffd27b;
+  border-bottom: 3px solid #ffd27b;
 }
 
 .nijimaru-news-inner {
@@ -3140,28 +3144,31 @@ body {
   gap: 16px;
 }
 
-/* スマホでは縦並びにする */
-@media (max-width: 768px) {
-  .nijimaru-news-inner {
-    flex-direction: column;
-  }
-}
+/* スマホでも横並びにするため、flex-direction は常に row のまま */
+/* なのでここでは flex-direction を変えない */
 
 .nijimaru-news-icon-area {
-  flex: 0 0 120px;
+  flex: 0 0 90px;
   display: flex;
   justify-content: center;
+  padding-top: 4px;
 }
 
 .nijimaru-news-icon {
-  max-width: 100px;
+  max-width: 80px;
   height: auto;
 }
 
+/* 右側のカード全体 */
 .nijimaru-news-content {
   flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
+/* 見出し行（にじまるニュース＋サブ説明＋「もっと見る」） */
 .nijimaru-news-header-row {
   display: flex;
   justify-content: space-between;
@@ -3169,17 +3176,17 @@ body {
   margin-bottom: 8px;
 }
 
-@media (max-width: 768px) {
+/* 画面がかなり狭い場合は、「もっと見る」だけ下に落ちてOK */
+@media (max-width: 480px) {
   .nijimaru-news-header-row {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
 
 .nijimaru-news-label {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  color: #008080; /* 深めの緑系。サイトのメインカラーに寄せてOK */
+  color: #e88a00; /* にじまるニュースのタイトル色 */
   margin: 0;
 }
 
@@ -3193,7 +3200,7 @@ body {
   align-self: center;
   font-size: 13px;
   text-decoration: none;
-  color: #008080;
+  color: #e88a00;
 }
 
 .nijimaru-news-more:hover {
@@ -3202,15 +3209,15 @@ body {
 
 .nijimaru-news-list {
   list-style: none;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   padding: 0;
 }
 
 .nijimaru-news-item {
   display: flex;
   gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid #dde9f3;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0e0c2;
   font-size: 14px;
 }
 
@@ -3232,4 +3239,5 @@ body {
 .nijimaru-news-item--placeholder .nijimaru-news-date {
   opacity: 0.7;
 }
+
 
