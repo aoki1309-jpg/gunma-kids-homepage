@@ -3121,13 +3121,115 @@ body {
     --rot: 0deg;
   }
 }
-
-
-
 /* スマホでは2列にして見やすく */
 @media (max-width: 768px) {
   .voice-photo-card {
     width: calc(50% - 12px);
   }
+}
+/* ========== にじまるニュース ========== */
+
+.nijimaru-news {
+  padding: 32px 0;
+  background: #f5fbff; /* うすい水色：サイト全体とトーンを合わせてOK */
+}
+
+.nijimaru-news-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* スマホでは縦並びにする */
+@media (max-width: 768px) {
+  .nijimaru-news-inner {
+    flex-direction: column;
+  }
+}
+
+.nijimaru-news-icon-area {
+  flex: 0 0 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.nijimaru-news-icon {
+  max-width: 100px;
+  height: auto;
+}
+
+.nijimaru-news-content {
+  flex: 1;
+}
+
+.nijimaru-news-header-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .nijimaru-news-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.nijimaru-news-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #008080; /* 深めの緑系。サイトのメインカラーに寄せてOK */
+  margin: 0;
+}
+
+.nijimaru-news-sub {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.nijimaru-news-more {
+  align-self: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: #008080;
+}
+
+.nijimaru-news-more:hover {
+  text-decoration: underline;
+}
+
+.nijimaru-news-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.nijimaru-news-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #dde9f3;
+  font-size: 14px;
+}
+
+.nijimaru-news-date {
+  white-space: nowrap;
+  color: #666;
+}
+
+.nijimaru-news-title {
+  flex: 1;
+}
+
+.nijimaru-news-note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.nijimaru-news-item--placeholder .nijimaru-news-date {
+  opacity: 0.7;
 }
 
