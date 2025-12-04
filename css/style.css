@@ -3245,6 +3245,8 @@ body {
 }
 /* ========== にじまるニュース一覧ページ ========== */
 
+/* ========== にじまるニュース一覧ページ ========== */
+
 .page-hero {
   padding: 40px 0 24px;
   background: #f5fbff;
@@ -3262,37 +3264,93 @@ body {
 }
 
 .news-list-section {
+  position: relative;
   padding: 24px 0 48px;
+  overflow: hidden;
+}
+
+/* ★ 背景ににじまるをいっぱい敷き詰める（うす〜く） */
+.news-list-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/nijimaru3.jpg");
+  background-size: 80px;        /* にじまるのサイズ */
+  background-repeat: repeat;    /* いっぱい並べる */
+  opacity: 0.06;                /* かなり薄くして邪魔にならないように */
+  pointer-events: none;
+}
+
+/* 中身だけ前面に出す */
+.news-list-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .news-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid #dde9f3;
+  border-top: 1px solid rgba(221, 233, 243, 0.8);
 }
 
+/* 1行全体：にじまる＋テキスト */
 .news-item {
   display: flex;
   gap: 12px;
   padding: 10px 0;
-  border-bottom: 1px solid #dde9f3;
+  border-bottom: 1px solid rgba(221, 233, 243, 0.8);
   font-size: 14px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.85); /* 背景があるので少し白をのせる */
+}
+
+/* 左のにじまるブロック */
+.news-nijimaru-wrap {
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.news-nijimaru-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* 右のテキスト部分 */
+.news-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .news-date {
   white-space: nowrap;
   color: #666;
+  font-size: 12px;
 }
 
 .news-title {
   flex: 1;
+  color: #333;
 }
 
+/* メモ文 */
 .news-note {
   margin-top: 12px;
   font-size: 12px;
   color: #777;
 }
+
+/* 画面が狭いときは少し余白を増やす */
+@media (max-width: 480px) {
+  .news-item {
+    padding: 12px 0;
+  }
+}
+
 
 
