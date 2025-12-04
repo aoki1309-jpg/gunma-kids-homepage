@@ -3274,7 +3274,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/nijimaru3.jpg");
+  background-image: url("../images/nijimaru3.jpg");
   background-size: 80px;        /* にじまるのサイズ */
   background-repeat: repeat;    /* いっぱい並べる */
   opacity: 0.06;                /* かなり薄くして邪魔にならないように */
@@ -3307,15 +3307,15 @@ body {
 
 /* 左のにじまるブロック */
 .news-nijimaru-wrap {
-  flex: 0 0 40px;
+  flex: 0 0 56px;
   display: flex;
   justify-content: center;
   padding-top: 2px;
 }
 
 .news-nijimaru-icon {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height:48px;
   object-fit: contain;
 }
 
