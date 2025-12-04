@@ -3277,7 +3277,7 @@ body {
   background-image: url("../images/nijimaru3.jpg");
   background-size: 80px;        /* にじまるのサイズ */
   background-repeat: repeat;    /* いっぱい並べる */
-  opacity: 0.06;                /* かなり薄くして邪魔にならないように */
+  opacity: 0.18;                /* かなり薄くして邪魔にならないように */
   pointer-events: none;
 }
 
@@ -3302,7 +3302,7 @@ body {
   border-bottom: 1px solid rgba(221, 233, 243, 0.8);
   font-size: 14px;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.85); /* 背景があるので少し白をのせる */
+  background: rgba(255, 255, 255, 0.8); /* 背景があるので少し白をのせる */
 }
 
 /* 左のにじまるブロック */
