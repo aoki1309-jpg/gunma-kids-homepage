@@ -3354,20 +3354,44 @@ body {
 
 
 
+/* にじまるニュース（トップページ用）のレイアウト調整 */
 .nijimaru-news-item {
-  cursor: pointer;              /* クリックできる感 */
+  cursor: pointer;
+  padding: 4px 0;
 }
 
+.nijimaru-news-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* 日付は少し細く・控えめに */
+.nijimaru-news-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* タイトルを目立たせる */
+.nijimaru-news-title {
+  font-weight: 600;
+}
+
+/* 本文のさわり */
 .nijimaru-news-teaser {
-  display: block;
+  margin: 2px 0 0;
   font-size: 0.9rem;
   color: #555;
-  margin-top: 2px;
+  line-height: 1.5;
 }
 
-.nijimaru-news-more {
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: #1f6b5b;
+/* スマホでは縦並びっぽく見せる */
+@media (max-width: 767px) {
+  .nijimaru-news-line {
+    flex-direction: column;
+  }
+
+  .nijimaru-news-date {
+    font-size: 0.85rem;
+  }
 }

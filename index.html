@@ -462,35 +462,37 @@
         }
 
         items.forEach((item) => {
-          const li = document.createElement("li");
-          li.className = "nijimaru-news-item";
+  const li = document.createElement("li");
+  li.className = "nijimaru-news-item";
 
-          const dateText =
-            (item.published_at || "").slice(0, 10) ||
-            (item.created_at || "").slice(0, 10) ||
-            "";
+  const dateText =
+    (item.published_at || "").slice(0, 10) ||
+    (item.created_at || "").slice(0, 10) ||
+    "";
 
-          const title = escapeHtml(item.title || "");
-          const body = escapeHtml(item.body || "");
+  const title = escapeHtml(item.title || "");
+  const body = escapeHtml(item.body || "");
 
-          // 本文の先頭だけ（60文字）表示
-          const teaser =
-            body.length > 60 ? body.slice(0, 60) + "…" : body;
+  const teaser =
+    body.length > 60 ? body.slice(0, 60) + "…" : body;
 
-          li.innerHTML = `
-            <span class="nijimaru-news-date">${dateText}</span>
-            <span class="nijimaru-news-title">${title}</span>
-            <span class="nijimaru-news-teaser">${teaser}</span>
-            <span class="nijimaru-news-more">くわしく見る ▶</span>
-          `;
+  // ★ 上: 日付＋タイトル（横並びだけど狭い画面では折り返す）
+  // ★ 下: 本文のさわりを1行〜2行くらい
+  li.innerHTML = `
+    <div class="nijimaru-news-line">
+      <span class="nijimaru-news-date">${dateText}</span>
+      <span class="nijimaru-news-title">${title}</span>
+    </div>
+    <p class="nijimaru-news-teaser">${teaser}</p>
+  `;
 
-          // クリックで一覧ページへ
-          li.addEventListener("click", () => {
-            window.location.href = "nijimaru-news.html";
-          });
+  // 1件まるごとクリックで一覧ページへ
+  li.addEventListener("click", () => {
+    window.location.href = "nijimaru-news.html";
+  });
 
-          list.appendChild(li);
-        });
+  list.appendChild(li);
+});
       } catch (e) {
         console.error(e);
         // エラー時はプレースホルダをそのままでもOK
