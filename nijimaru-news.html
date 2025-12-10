@@ -280,49 +280,83 @@
 </footer>
 
 
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+  <script>
+    async function loadNijimaruNewsList() {
+      const list = document.getElementById("nijimaru-news-list");
+      if (!list) return;
+
+      const API_BASE = "https://reservation-system-qz6n.onrender.com";
+
+      try {
+        const res = await fetch(
+          API_BASE + "/public/nijimaru-news?target=web&limit=100"
+        );
+        if (!res.ok) throw new Error("failed");
+        const items = await res.json();
+
+        list.innerHTML = "";
+
+        if (!items || !items.length) {
+          list.innerHTML = `
+            <li class="news-item">
+              <div class="news-nijimaru-wrap">
+                <img
+                  src="images/nijimaru_annai.webp"
+                  alt="にじまるアイコン"
+                  class="news-nijimaru-icon"
+                />
+              </div>
+              <div class="news-text">
+                <span class="news-date"></span>
+                <span class="news-title">現在表示できるお知らせはありません。</span>
+              </div>
+            </li>
+          `;
+          return;
+        }
+
+        // アイコンをちょっとローテーションさせる（お好みで）
+        const iconPaths = [
+          "images/nijimaru_annai.webp",
+          "images/nijimaru55.jpg",
+          "images/nijimaru44.jpg"
+        ];
+
+        items.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.className = "news-item";
+
+          const dateText =
+            (item.published_at || "").slice(0, 10) ||
+            (item.created_at || "").slice(0, 10) ||
+            "";
+
+          const icon = iconPaths[index % iconPaths.length];
+
+          li.innerHTML = `
+            <div class="news-nijimaru-wrap">
+              <img
+                src="${icon}"
+                alt="にじまるアイコン"
+                class="news-nijimaru-icon"
+              />
+            </div>
+            <div class="news-text">
+              <span class="news-date">${dateText}</span>
+              <span class="news-title">${item.title}</span>
+            </div>
+          `;
+          list.appendChild(li);
+        });
+      } catch (e) {
+        console.error(e);
+        // エラー時は、もともとのダミーを残していてもOK
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadNijimaruNewsList);
+  </script>
 </body>
 </html>
 
-<script>
-  async function loadNijimaruNewsList() {
-    const list = document.getElementById("nijimaru-news-list");
-    if (!list) return;
-
-    try {
-      const res = await fetch(
-        "https://reservation-system-qz6n.onrender.com/public/announcements?nijimaru=1"
-      );
-      if (!res.ok) throw new Error("failed");
-      const items = await res.json();
-
-      list.innerHTML = "";
-
-      if (!items.length) {
-        list.innerHTML = `
-          <li class="news-item">
-            <span class="news-date"></span>
-            <span class="news-title">現在表示できるお知らせはありません。</span>
-          </li>
-        `;
-        return;
-      }
-
-      items.forEach((item) => {
-        const li = document.createElement("li");
-        li.className = "news-item";
-        li.innerHTML = `
-          <span class="news-date">${item.created_at ?? ""}</span>
-          <span class="news-title">${item.title}</span>
-        `;
-        list.appendChild(li);
-      });
-    } catch (e) {
-      console.error(e);
-      // エラー時はダミーを残してもOK
-    }
-  }
-
-  // APIができたらここを有効化
-  // loadNijimaruNewsList();
-</script>

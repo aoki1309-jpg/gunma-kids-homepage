@@ -420,6 +420,60 @@
 </footer>
 
 
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+  <script>
+    async function loadTopNijimaruNews() {
+      const list = document.getElementById("nijimaru-news-list");
+      if (!list) return;
+
+      const API_BASE = "https://reservation-system-qz6n.onrender.com";
+
+      try {
+        const res = await fetch(
+          API_BASE + "/public/nijimaru-news?target=web&limit=3"
+        );
+        if (!res.ok) throw new Error("failed");
+        const items = await res.json();
+
+        list.innerHTML = "";
+
+        if (!items || !items.length) {
+          // 何もなければプレースホルダ文言を出す
+          list.innerHTML = `
+            <li class="nijimaru-news-item nijimaru-news-item--placeholder">
+              <span class="nijimaru-news-date"></span>
+              <span class="nijimaru-news-title">
+                現在表示できるお知らせはありません。
+              </span>
+            </li>
+          `;
+          return;
+        }
+
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.className = "nijimaru-news-item";
+
+          const dateText =
+            (item.published_at || "").slice(0, 10) ||
+            (item.created_at || "").slice(0, 10) ||
+            "";
+
+          li.innerHTML = `
+            <span class="nijimaru-news-date">${dateText}</span>
+            <span class="nijimaru-news-title">${item.title}</span>
+          `;
+          list.appendChild(li);
+        });
+      } catch (e) {
+        console.error(e);
+        // エラー時はプレースホルダをそのままでもOK
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadTopNijimaruNews);
+  </script>
 </body>
 </html>
+
+
