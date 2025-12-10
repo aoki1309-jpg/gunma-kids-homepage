@@ -3354,3 +3354,20 @@ body {
 
 
 
+.nijimaru-news-item {
+  cursor: pointer;              /* クリックできる感 */
+}
+
+.nijimaru-news-teaser {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+.nijimaru-news-more {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #1f6b5b;
+}

@@ -420,8 +420,19 @@
 </footer>
 
 
-    <script src="js/main.js"></script>
+      <script src="js/main.js"></script>
   <script>
+    // 安全のための HTML エスケープ
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
     async function loadTopNijimaruNews() {
       const list = document.getElementById("nijimaru-news-list");
       if (!list) return;
@@ -438,7 +449,7 @@
         list.innerHTML = "";
 
         if (!items || !items.length) {
-          // 何もなければプレースホルダ文言を出す
+          // 何もなければプレースホルダ文言
           list.innerHTML = `
             <li class="nijimaru-news-item nijimaru-news-item--placeholder">
               <span class="nijimaru-news-date"></span>
@@ -460,23 +471,23 @@
             "";
 
           const title = escapeHtml(item.title || "");
-const body = escapeHtml(item.body || "");
+          const body = escapeHtml(item.body || "");
 
-// 先頭 60 文字だけ抜き出して「…」を付ける
-const teaser =
-  body.length > 60 ? body.slice(0, 60) + "…" : body;
+          // 本文の先頭だけ（60文字）表示
+          const teaser =
+            body.length > 60 ? body.slice(0, 60) + "…" : body;
 
-li.innerHTML = `
-  <span class="nijimaru-news-date">${dateText}</span>
-  <span class="nijimaru-news-title">${title}</span>
-  <span class="nijimaru-news-teaser">${teaser}</span>
-  <span class="nijimaru-news-more">くわしく見る ▶</span>
-`;
+          li.innerHTML = `
+            <span class="nijimaru-news-date">${dateText}</span>
+            <span class="nijimaru-news-title">${title}</span>
+            <span class="nijimaru-news-teaser">${teaser}</span>
+            <span class="nijimaru-news-more">くわしく見る ▶</span>
+          `;
 
-// カード全体をクリックで一覧へ
-li.addEventListener("click", () => {
-  window.location.href = "nijimaru-news.html";
-});
+          // クリックで一覧ページへ
+          li.addEventListener("click", () => {
+            window.location.href = "nijimaru-news.html";
+          });
 
           list.appendChild(li);
         });
@@ -490,5 +501,3 @@ li.addEventListener("click", () => {
   </script>
 </body>
 </html>
-
-
