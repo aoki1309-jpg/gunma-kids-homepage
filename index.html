@@ -459,10 +459,25 @@
             (item.created_at || "").slice(0, 10) ||
             "";
 
-          li.innerHTML = `
-            <span class="nijimaru-news-date">${dateText}</span>
-            <span class="nijimaru-news-title">${item.title}</span>
-          `;
+          const title = escapeHtml(item.title || "");
+const body = escapeHtml(item.body || "");
+
+// 先頭 60 文字だけ抜き出して「…」を付ける
+const teaser =
+  body.length > 60 ? body.slice(0, 60) + "…" : body;
+
+li.innerHTML = `
+  <span class="nijimaru-news-date">${dateText}</span>
+  <span class="nijimaru-news-title">${title}</span>
+  <span class="nijimaru-news-teaser">${teaser}</span>
+  <span class="nijimaru-news-more">くわしく見る ▶</span>
+`;
+
+// カード全体をクリックで一覧へ
+li.addEventListener("click", () => {
+  window.location.href = "nijimaru-news.html";
+});
+
           list.appendChild(li);
         });
       } catch (e) {
