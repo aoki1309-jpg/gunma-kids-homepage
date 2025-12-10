@@ -420,9 +420,9 @@
 </footer>
 
 
-      <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
   <script>
-    // 安全のための HTML エスケープ
+    // HTMLエスケープ
     function escapeHtml(str) {
       if (!str) return "";
       return String(str)
@@ -440,6 +440,7 @@
       const API_BASE = "https://reservation-system-qz6n.onrender.com";
 
       try {
+        // ★ 最新 3 件だけ取得
         const res = await fetch(
           API_BASE + "/public/nijimaru-news?target=web&limit=3"
         );
@@ -449,7 +450,6 @@
         list.innerHTML = "";
 
         if (!items || !items.length) {
-          // 何もなければプレースホルダ文言
           list.innerHTML = `
             <li class="nijimaru-news-item nijimaru-news-item--placeholder">
               <span class="nijimaru-news-date"></span>
@@ -462,40 +462,28 @@
         }
 
         items.forEach((item) => {
-  const li = document.createElement("li");
-  li.className = "nijimaru-news-item";
+          const dateText =
+            (item.published_at || "").slice(0, 10) ||
+            (item.created_at || "").slice(0, 10) ||
+            "";
 
-  const dateText =
-    (item.published_at || "").slice(0, 10) ||
-    (item.created_at || "").slice(0, 10) ||
-    "";
+          const title = escapeHtml(item.title || "");
 
-  const title = escapeHtml(item.title || "");
-  const body = escapeHtml(item.body || "");
+          const li = document.createElement("li");
+          li.className = "nijimaru-news-item";
 
-  const teaser =
-    body.length > 60 ? body.slice(0, 60) + "…" : body;
+          // 日付 → タイトル（リンク）の縦並び
+          li.innerHTML = `
+            <div class="nijimaru-news-date">${dateText}</div>
+            <a href="nijimaru-news.html" class="nijimaru-news-title-link">
+              ${title}
+            </a>
+          `;
 
-  // ★ 上: 日付＋タイトル（横並びだけど狭い画面では折り返す）
-  // ★ 下: 本文のさわりを1行〜2行くらい
-  li.innerHTML = `
-    <div class="nijimaru-news-line">
-      <span class="nijimaru-news-date">${dateText}</span>
-      <span class="nijimaru-news-title">${title}</span>
-    </div>
-    <p class="nijimaru-news-teaser">${teaser}</p>
-  `;
-
-  // 1件まるごとクリックで一覧ページへ
-  li.addEventListener("click", () => {
-    window.location.href = "nijimaru-news.html";
-  });
-
-  list.appendChild(li);
-});
+          list.appendChild(li);
+        });
       } catch (e) {
         console.error(e);
-        // エラー時はプレースホルダをそのままでもOK
       }
     }
 
