@@ -280,8 +280,19 @@
 </footer>
 
 
-    <script src="js/main.js"></script>
+      <script src="js/main.js"></script>
   <script>
+    // HTMLエスケープ（安全のため）
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
     async function loadNijimaruNewsList() {
       const list = document.getElementById("nijimaru-news-list");
       if (!list) return;
@@ -316,7 +327,6 @@
           return;
         }
 
-        // アイコンをちょっとローテーションさせる（お好みで）
         const iconPaths = [
           "images/nijimaru_annai.webp",
           "images/nijimaru55.jpg",
@@ -334,6 +344,9 @@
 
           const icon = iconPaths[index % iconPaths.length];
 
+          const title = escapeHtml(item.title || "");
+          const bodyHtml = escapeHtml(item.body || "").replace(/\n/g, "<br>");
+
           li.innerHTML = `
             <div class="news-nijimaru-wrap">
               <img
@@ -344,14 +357,15 @@
             </div>
             <div class="news-text">
               <span class="news-date">${dateText}</span>
-              <span class="news-title">${item.title}</span>
+              <span class="news-title">${title}</span>
+              <p class="news-body">${bodyHtml}</p>
             </div>
           `;
           list.appendChild(li);
         });
       } catch (e) {
         console.error(e);
-        // エラー時は、もともとのダミーを残していてもOK
+        // エラー時はダミーが残っていてもOK
       }
     }
 
@@ -359,4 +373,3 @@
   </script>
 </body>
 </html>
-
