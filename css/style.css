@@ -932,17 +932,23 @@ body {
   .mobile-cta {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
     padding: 0 24px 32px;
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   .mobile-cta .cta-button {
-    width: 100%;
+    display: inline-flex;
+    width: auto;
+    min-width: auto;
     min-height: 48px;
     font-size: 1rem;
     justify-content: center;
     text-align: center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
   }
 
   /* ★ここでメニューの行間を広げる */
@@ -1094,6 +1100,14 @@ body {
 
   .mobile-cta {
     padding: 0 24px 40px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-cta .cta-login {
+    background: #ec4899;
+    border-color: #ec4899;
+    color: #ffffff;
   }
 
   /* ヘッダーぶん本文を下げる（隠れ防止） */
