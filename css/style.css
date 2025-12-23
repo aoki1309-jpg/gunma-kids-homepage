@@ -3431,6 +3431,16 @@ body {
   color: #333;
 }
 
+.news-body-link {
+  color: #2563eb;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.news-body-link:hover {
+  color: #1d4ed8;
+}
+
 /* メモ文 */
 .news-note {
   margin-top: 12px;

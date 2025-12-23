@@ -480,6 +480,7 @@
           anchor.target = "_blank";
           anchor.rel = "noopener noreferrer";
           anchor.textContent = url;
+          anchor.classList.add("news-body-link");
           anchor.onclick = (e) => e.stopPropagation();
           fragment.appendChild(anchor);
         } else {
