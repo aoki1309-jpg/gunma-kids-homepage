@@ -147,7 +147,7 @@ main li {
 .cta-login {
   color: #2f8e4f;
   background: #ffffff;
-  border: 12px solid #a6dcb6;
+  border: 2px solid #a6dcb6;
 }
 
 .cta-login:hover {
@@ -164,7 +164,7 @@ main li {
 .cta-shop {
   color: #0f536f;
   background: linear-gradient(135deg, #b7ecff, #8fd6e8);
-  border: 12px solid #8fd6e8;
+  border: 2px solid #8fd6e8;
 }
 
 .cta-shop:hover {
