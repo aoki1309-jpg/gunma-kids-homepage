@@ -199,13 +199,13 @@
           <li class="nijimaru-news-item nijimaru-news-item--placeholder">
             <span class="nijimaru-news-date">2025-12-03</span>
             <span class="nijimaru-news-title">
-              にじまるニュースの配信準備中です。アプリと同じお知らせがここに表示されます。
+              にじまるニュースの配信準備中です
             </span>
           </li>
         </ul>
 
         <p class="nijimaru-news-note">
-          ※バスの遅延・集合時間の変更など、重要なお知らせが表示されます。
+          ※最新情報や重要なお知らせが表示されます。
         </p>
       </div>
     </div>
@@ -535,8 +535,7 @@
             "";
 
           const title = escapeHtml(item.title || "");
-          const teaser = item.body || "";
-
+          
           const li = document.createElement("li");
           li.className = "nijimaru-news-item";
 
@@ -547,13 +546,6 @@
               ${title}
             </a>
           `;
-
-          if (teaser) {
-            const teaserEl = document.createElement("p");
-            teaserEl.className = "nijimaru-news-teaser";
-            teaserEl.appendChild(linkifyText(teaser));
-            li.appendChild(teaserEl);
-          }
 
           list.appendChild(li);
         });
