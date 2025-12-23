@@ -119,6 +119,65 @@ main li {
   transform: translateX(0);
 }
 
+.header-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  align-self: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: -8px;      /* ロゴに少し近づける */
+  margin-bottom: 8px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.cta-login {
+  color: #2f8e4f;
+  background: #ffffff;
+  border: 2px solid #a6dcb6;
+}
+
+.cta-login:hover {
+  background: #f2fbf5;
+  border-color: #7fcf9c;
+  transform: translateY(-1px);
+}
+
+.cta-login:active {
+  background: #e5f7eb;
+  transform: translateY(0);
+}
+
+.cta-shop {
+  color: #0f536f;
+  background: linear-gradient(135deg, #b7ecff, #8fd6e8);
+  border: 2px solid #8fd6e8;
+}
+
+.cta-shop:hover {
+  background: linear-gradient(135deg, #c6f2ff, #a0dff0);
+  border-color: #7ac0d8;
+  transform: translateY(-1px);
+}
+
+.cta-shop:active {
+  background: linear-gradient(135deg, #b1e8fb, #8ccbdc);
+  transform: translateY(0);
+}
+
 /* 左サイドバーの幅ぶん、本文を右にずらす */
 main {
   margin-left: 260px;
@@ -870,6 +929,22 @@ body {
     padding: 0 24px 32px;
   }
 
+  .mobile-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 24px 32px;
+    margin-top: 12px;
+  }
+
+  .mobile-cta .cta-button {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
   /* ★ここでメニューの行間を広げる */
   .mobile-menu li + li {
     margin-top: 20px;   /* ここを22〜24pxにしてもOK */
@@ -1015,6 +1090,10 @@ body {
     font-weight: 500;
     color: #333;
     text-decoration: none;
+  }
+
+  .mobile-cta {
+    padding: 0 24px 40px;
   }
 
   /* ヘッダーぶん本文を下げる（隠れ防止） */

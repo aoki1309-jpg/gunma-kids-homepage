@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!btn || !menu) return;
 
   btn.addEventListener('click', () => {
-    menu.classList.toggle('open');
+   const willOpen = !menu.classList.contains('open');
+    menu.classList.toggle('open', willOpen);
+    btn.classList.toggle('open', willOpen);
+    btn.setAttribute('aria-expanded', String(willOpen));
   });
 });
