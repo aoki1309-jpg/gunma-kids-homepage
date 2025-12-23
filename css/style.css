@@ -1059,6 +1059,7 @@ body {
 
   /* メニュー本体（全画面に白い板を出す） */
   .mobile-menu {
+    display: none;
     position: fixed;
     top: 64px; /* ヘッダーの高さ分ずらす */
     left: 0;
@@ -1067,28 +1068,21 @@ body {
     background: rgba(255, 255, 255, 0.96);
     z-index: 900;
     overflow-y: auto;
-    padding: 24px 24px calc(24px + env(safe-area-inset-bottom));
-    transform: none; /* 上の媒体用指定を打ち消す */
-    display: none;
   }
 
   .mobile-menu.open {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   .mobile-menu ul {
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    padding: 24px 24px 40px;
   }
 
   /* ← メニューの行間を広めにする（押し間違え防止） */
   .mobile-menu li + li {
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .mobile-menu a {
@@ -1099,21 +1093,7 @@ body {
   }
 
   .mobile-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 16px;
-    padding: 0;
-  }
-
-  .mobile-cta .cta-button {
-    width: 100%;
-  }
-
-  .mobile-cta .cta-login {
-    background: #ec4899; /* Tailwind bg-pink-500 相当 */
-    color: #ffffff;
-    border: none;
+    padding: 0 24px 40px;
   }
 
   /* ヘッダーぶん本文を下げる（隠れ防止） */
