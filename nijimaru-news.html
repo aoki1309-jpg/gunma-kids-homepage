@@ -302,6 +302,63 @@
         .replace(/'/g, "&#39;");
     }
 
+    function linkifyText(text) {
+      const fragment = document.createDocumentFragment();
+      if (!text) return fragment;
+
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      let lastIndex = 0;
+
+      const appendTextWithBreaks = (value) => {
+        const parts = value.split(/\n/);
+        parts.forEach((part, index) => {
+          fragment.appendChild(document.createTextNode(part));
+          if (index < parts.length - 1) {
+            fragment.appendChild(document.createElement("br"));
+          }
+        });
+      };
+
+      let match;
+      while ((match = urlRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+          appendTextWithBreaks(text.slice(lastIndex, match.index));
+        }
+
+        let url = match[0];
+        let trailing = "";
+        const trailingMatch = url.match(/[)\]＞〉】」』。、．｡，、.]+$/);
+        if (trailingMatch) {
+          trailing = trailingMatch[0];
+          url = url.slice(0, -trailing.length);
+        }
+
+        if (url) {
+          const anchor = document.createElement("a");
+          anchor.href = url;
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+          anchor.textContent = url;
+          anchor.onclick = (e) => e.stopPropagation();
+          fragment.appendChild(anchor);
+        } else {
+          appendTextWithBreaks(match[0]);
+        }
+
+        if (trailing) {
+          appendTextWithBreaks(trailing);
+        }
+
+        lastIndex = match.index + match[0].length;
+      }
+
+      if (lastIndex < text.length) {
+        appendTextWithBreaks(text.slice(lastIndex));
+      }
+
+      return fragment;
+    }
+
     async function loadNijimaruNewsList() {
       const list = document.getElementById("nijimaru-news-list");
       if (!list) return;
@@ -354,8 +411,7 @@
           const icon = iconPaths[index % iconPaths.length];
 
           const title = escapeHtml(item.title || "");
-          const bodyHtml = escapeHtml(item.body || "").replace(/\n/g, "<br>");
-
+          
           li.innerHTML = `
             <div class="news-nijimaru-wrap">
               <img
@@ -367,9 +423,17 @@
             <div class="news-text">
               <span class="news-date">${dateText}</span>
               <span class="news-title">${title}</span>
-              <p class="news-body">${bodyHtml}</p>
             </div>
           `;
+
+          const body = document.createElement("p");
+          body.className = "news-body";
+          body.appendChild(linkifyText(item.body || ""));
+
+          const textWrapper = li.querySelector(".news-text");
+          if (textWrapper) {
+            textWrapper.appendChild(body);
+          }
           list.appendChild(li);
         });
       } catch (e) {
