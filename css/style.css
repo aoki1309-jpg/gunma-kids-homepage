@@ -46,6 +46,12 @@ main li {
   z-index: 1000;
 }
 
+@media (min-width: 769px) {
+  .site-header {
+    overflow-y: auto;
+  }
+}
+
 /* 中身を縦に並べる */
 .header-inner {
   display: flex;
