@@ -112,7 +112,8 @@ const setupTripsPage = () => {
       const response = await fetch(`${API_BASE}/public/trips?season_key=${encodeURIComponent(seasonKey)}`);
       if (!response.ok) throw new Error('Failed to fetch trips');
       const data = await response.json();
-      const list = Array.isArray(data) ? data : data?.published || [];
+      const publishedList = data && typeof data === 'object' ? data.published : undefined;
+      const list = Array.isArray(data) ? data : (publishedList || []);
       renderTrips(list, season);
     } catch (error) {
       setStatus('読み込みに失敗しました。時間をおいて再度お試しください。');
