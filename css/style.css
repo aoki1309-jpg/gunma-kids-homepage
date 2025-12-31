@@ -3504,3 +3504,158 @@ body {
     font-size: 0.85rem;
   }
 }
+
+/* ========== 旅の募集ページ ========== */
+.trips-section {
+  padding: 24px 0 64px;
+}
+
+.trips-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.trip-tab {
+  border: 1px solid #f0d3a3;
+  background: #fffaf3;
+  color: #7a5516;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.trip-tab.is-active {
+  background: #f5a623;
+  border-color: #f5a623;
+  color: #fff;
+}
+
+.trips-status {
+  min-height: 1.5em;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.trip-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trip-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.trip-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f4f4f4;
+  color: #555;
+}
+
+.trip-badge--spring {
+  background: #f7eef8;
+  color: #8a4c7f;
+}
+
+.trip-badge--summer {
+  background: #fff3e5;
+  color: #a35b1b;
+}
+
+.trip-badge--annual {
+  background: #e9f6f1;
+  color: #2f7a61;
+}
+
+.trip-date {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.trip-title {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #222;
+}
+
+.trip-meta {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.trip-meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.trip-meta dt {
+  font-weight: 600;
+  color: #666;
+}
+
+.trip-meta dd {
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.trip-detail-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #f5a623;
+  color: #7a5516;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.trip-detail-link:hover {
+  background: #f5a623;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .trips-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+}
