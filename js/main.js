@@ -1,5 +1,3 @@
-// main.js
-// js/main.js
 const API_BASE = 'https://api.kodomonotabi.net';
 const TRIP_DETAIL_BASE = 'https://reservation-frontend-xxxx.onrender.com';
 
@@ -8,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTripsPage();
 });
 
-const setupMobileMenu = () => {
+function setupMobileMenu() {
   const btn = document.getElementById('hamburger-btn');
   const menu = document.getElementById('mobile-menu');
 
@@ -20,9 +18,9 @@ const setupMobileMenu = () => {
     btn.classList.toggle('open', willOpen);
     btn.setAttribute('aria-expanded', String(willOpen));
   });
-};
+}
 
-const setupTripsPage = () => {
+function setupTripsPage() {
   const tripsPage = document.querySelector('[data-trips-page]');
   if (!tripsPage) return;
 
@@ -100,7 +98,29 @@ const setupTripsPage = () => {
         ? `${TRIP_DETAIL_BASE}/trip/${trip.product_key}`
         : '#';
 
-      card.innerHTML = `\n        <div class=\"trip-card-header\">\n          <span class=\"trip-badge ${badgeClassMap[season] || ''}\">${seasonLabels[season] || ''}</span>\n          <p class=\"trip-date\">${dateLabel}</p>\n        </div>\n        <h2 class=\"trip-title\">${title}</h2>\n        <dl class=\"trip-meta\">\n          <div>\n            <dt>料金</dt>\n            <dd>${priceLabel}</dd>\n          </div>\n          <div>\n            <dt>最少催行人数</dt>\n            <dd>${minParticipants}</dd>\n          </div>\n          <div>\n            <dt>食事</dt>\n            <dd>${meals}</dd>\n          </div>\n        </dl>\n        <a class=\"trip-detail-link\" href=\"${detailUrl}\">詳しく見る</a>\n      `;\n      listEl.appendChild(card);
+      card.innerHTML = `
+        <div class="trip-card-header">
+          <span class="trip-badge ${badgeClassMap[season] || ''}">${seasonLabels[season] || ''}</span>
+          <p class="trip-date">${dateLabel}</p>
+        </div>
+        <h2 class="trip-title">${title}</h2>
+        <dl class="trip-meta">
+          <div>
+            <dt>料金</dt>
+            <dd>${priceLabel}</dd>
+          </div>
+          <div>
+            <dt>最少催行人数</dt>
+            <dd>${minParticipants}</dd>
+          </div>
+          <div>
+            <dt>食事</dt>
+            <dd>${meals}</dd>
+          </div>
+        </dl>
+        <a class="trip-detail-link" href="${detailUrl}">詳しく見る</a>
+      `;
+      listEl.appendChild(card);
     });
   };
 
@@ -113,7 +133,7 @@ const setupTripsPage = () => {
       if (!response.ok) throw new Error('Failed to fetch trips');
       const data = await response.json();
       const publishedList = data && typeof data === 'object' ? data.published : undefined;
-      const list = Array.isArray(data) ? data : (publishedList || []);
+      const list = Array.isArray(data) ? data : publishedList || [];
       renderTrips(list, season);
     } catch (error) {
       setStatus('読み込みに失敗しました。時間をおいて再度お試しください。');
@@ -132,4 +152,4 @@ const setupTripsPage = () => {
   });
 
   loadSeason('spring');
-};
+}
