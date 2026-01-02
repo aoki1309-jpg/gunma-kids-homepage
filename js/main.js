@@ -1,10 +1,16 @@
 const API_BASE = 'https://api.kodomonotabi.net';
-const TRIP_DETAIL_BASE = 'https://reservation-frontend-xxxx.onrender.com';
+const TRIP_DETAIL_BASE = 'https://reservation-frontend-ywwf.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
   setupMobileMenu();
+  setupAboutTravelLinks();
   setupTripsPage();
 });
+
+function getYearParam(defaultYear = '2026') {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('year') || defaultYear;
+}
 
 function setupMobileMenu() {
   const btn = document.getElementById('hamburger-btn');
@@ -17,6 +23,50 @@ function setupMobileMenu() {
     menu.classList.toggle('open', willOpen);
     btn.classList.toggle('open', willOpen);
     btn.setAttribute('aria-expanded', String(willOpen));
+    menu.style.display = willOpen ? 'block' : '';
+    menu.setAttribute('aria-hidden', String(!willOpen));
+  });
+}
+
+function setupAboutTravelLinks() {
+  const seasonLinks = Array.from(document.querySelectorAll('[data-season-link]'));
+  if (!seasonLinks.length) return;
+
+  const year = getYearParam();
+  const seasons = Array.from(new Set(seasonLinks.map((link) => link.dataset.seasonLink)));
+
+  const updateLink = (link, trip) => {
+    if (trip && trip.product_key) {
+      link.href = `${TRIP_DETAIL_BASE}/trip/${trip.product_key}`;
+      link.textContent = '詳細を見る';
+      link.classList.remove('btn-link-disabled');
+      link.setAttribute('aria-disabled', 'false');
+    } else {
+      link.href = '#';
+      link.classList.add('btn-link-disabled');
+      link.setAttribute('aria-disabled', 'true');
+    }
+  };
+
+  const fetchSeason = async (season) => {
+    try {
+      const response = await fetch(`${API_BASE}/public/trips?season_key=${encodeURIComponent(`${season}_${year}`)}`);
+      if (!response.ok) throw new Error('Failed to fetch trips');
+      const data = await response.json();
+      const publishedList = data && typeof data === 'object' ? data.published : undefined;
+      const list = Array.isArray(data) ? data : publishedList || [];
+      return list.find((trip) => trip.product_key);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  seasons.forEach((season) => {
+    fetchSeason(season).then((trip) => {
+      seasonLinks
+        .filter((link) => link.dataset.seasonLink === season)
+        .forEach((link) => updateLink(link, trip));
+    });
   });
 }
 
@@ -30,12 +80,7 @@ function setupTripsPage() {
 
   if (!tabs.length || !listEl || !statusEl) return;
 
-  const getYear = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('year') || '2026';
-  };
-
-  const getSeasonKey = (season) => `${season}_${getYear()}`;
+  const getSeasonKey = (season) => `${season}_${getYearParam()}`;
 
   const setStatus = (message = '') => {
     statusEl.textContent = message;
