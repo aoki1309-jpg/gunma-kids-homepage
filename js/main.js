@@ -1,4 +1,4 @@
-const API_BASE = 'https://api.kodomonotabi.net';
+const API_BASE = 'https://reservation-system-qz6n.onrender.com';
 const TRIP_DETAIL_BASE = 'https://reservation-frontend-ywwf.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
