@@ -32,41 +32,18 @@ function setupAboutTravelLinks() {
   const seasonLinks = Array.from(document.querySelectorAll('[data-season-link]'));
   if (!seasonLinks.length) return;
 
-  const year = getYearParam();
-  const seasons = Array.from(new Set(seasonLinks.map((link) => link.dataset.seasonLink)));
-
-  const updateLink = (link, trip) => {
-    if (trip && trip.product_key) {
-      link.href = `${TRIP_DETAIL_BASE}/trip/${trip.product_key}`;
-      link.textContent = '詳細を見る';
-      link.classList.remove('btn-link-disabled');
-      link.setAttribute('aria-disabled', 'false');
-    } else {
-      link.href = '#';
-      link.classList.add('btn-link-disabled');
-      link.setAttribute('aria-disabled', 'true');
-    }
+  const seasonUrlMap = {
+    spring: `${TRIP_DETAIL_BASE}/trips?season=spring`,
+    summer: `${TRIP_DETAIL_BASE}/trips?season=summer`,
+    annual: `${TRIP_DETAIL_BASE}/trips?season=other`,
   };
 
-  const fetchSeason = async (season) => {
-    try {
-      const response = await fetch(`${API_BASE}/public/trips?season_key=${encodeURIComponent(`${season}_${year}`)}`);
-      if (!response.ok) throw new Error('Failed to fetch trips');
-      const data = await response.json();
-      const publishedList = data && typeof data === 'object' ? data.published : undefined;
-      const list = Array.isArray(data) ? data : publishedList || [];
-      return list.find((trip) => trip.product_key);
-    } catch (error) {
-      return null;
-    }
-  };
-
-  seasons.forEach((season) => {
-    fetchSeason(season).then((trip) => {
-      seasonLinks
-        .filter((link) => link.dataset.seasonLink === season)
-        .forEach((link) => updateLink(link, trip));
-    });
+  seasonLinks.forEach((link) => {
+    const targetUrl = seasonUrlMap[link.dataset.seasonLink];
+    if (!targetUrl) return;
+    link.href = targetUrl;
+    link.classList.remove('btn-link-disabled');
+    link.setAttribute('aria-disabled', 'false');
   });
 }
 
