@@ -168,6 +168,16 @@
   </div>
 </section>
 
+  <section class="app-download-strip" aria-label="公式アプリ配信中">
+    <div class="container app-download-strip-inner">
+      <p class="app-download-strip-text">公式アプリ配信中</p>
+      <div class="app-download-strip-links">
+        <a class="app-download-strip-link" data-app-platform="ios" href="#">iPhoneの方はこちら</a>
+        <a class="app-download-strip-link" data-app-platform="android" href="#">Androidの方はこちら</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ★★★ にじまるニュース（NEW）★★★ -->
   <section class="nijimaru-news">
     <div class="container nijimaru-news-inner">
@@ -246,6 +256,35 @@
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="app-download-section" aria-labelledby="app-download-title">
+    <div class="container app-download-inner">
+      <div class="app-download-content">
+        <h2 id="app-download-title" class="app-download-title">ぐんま子どもの旅 公式アプリ</h2>
+        <p class="app-download-description">
+          会員登録後のお知らせ確認や、にじまる速報のチェックなどに便利な公式アプリをご利用いただけます。スマートフォンから見やすく、外出先でもすぐに確認できるのでおすすめです。
+        </p>
+        <ul class="app-download-features">
+          <li>最新のお知らせを確認</li>
+          <li>にじまる速報をスマホでチェック</li>
+          <li>外出先でも見やすく便利</li>
+        </ul>
+        <div class="app-download-actions">
+          <a class="app-download-button app-download-button--ios" data-app-platform="ios" href="#">iPhoneの方はこちら</a>
+          <a class="app-download-button app-download-button--android" data-app-platform="android" href="#">Androidの方はこちら</a>
+        </div>
+      </div>
+      <aside class="app-download-visual" aria-label="公式アプリの表示イメージ">
+        <div class="app-download-icon-wrap">
+          <img src="images/nijimaru_.png" alt="ぐんま子どもの旅 公式アプリアイコン（イメージ）" class="app-download-icon" />
+        </div>
+        <div class="app-download-qr-wrap">
+          <p class="app-download-qr-label">QRコードからもアクセスできます</p>
+          <img src="images/lineqr.png" alt="公式アプリダウンロードQRコード（仮）" class="app-download-qr" />
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -432,6 +471,23 @@
 
         <script src="js/main.js"></script>
   <script>
+    const APP_DOWNLOAD_LINKS = {
+      ios: "https://apps.apple.com/jp/app/id6757183880",
+      android: "https://play.google.com/store/apps/details?id=net.kodomonotabi.gunmakidsapp",
+    };
+
+    function bindAppDownloadLinks() {
+      document.querySelectorAll("[data-app-platform]").forEach((anchor) => {
+        const platform = anchor.getAttribute("data-app-platform");
+        const url = APP_DOWNLOAD_LINKS[platform];
+        if (!url) return;
+
+        anchor.href = url;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+      });
+    }
+
     // HTMLエスケープ
     function escapeHtml(str) {
       if (!str) return "";
@@ -555,7 +611,10 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", loadTopNijimaruNews);
+    document.addEventListener("DOMContentLoaded", () => {
+      bindAppDownloadLinks();
+      loadTopNijimaruNews();
+    });
   </script>
 </body>
 </html>
