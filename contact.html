@@ -156,20 +156,23 @@
     </div>
   </section>
 
-      <!-- LINE ボタン（追加） -->
+    <!-- LINE ボタン（追加） -->
     <div class="contact-line-button-wrap">
-      <a href="https://lin.ee/NxTli6X" target="_blank" class="contact-line-button">
+      <a href="https://lin.ee/NxTli6X" target="_blank" rel="noopener noreferrer" class="contact-line-button">
         LINEで問い合わせる
       </a>
     </div>
 
-    <!-- メールフォーム -->
-    <!-- メールフォーム -->
   <section class="contact-section">
   <h2>メールフォームでお問い合わせ</h2>
   <p>必要事項をご入力の上、送信してください。</p>
 
-  <form class="contact-form" id="contactForm">
+  <form class="contact-form" name="contact" method="POST" action="contact-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="contact-form-hidden">
+      <label>この欄は入力しないでください <input name="bot-field"></label>
+    </p>
+
     <label>
       保護者のお名前 <span class="required">必須</span>
       <input type="text" name="parentName" required>
@@ -190,45 +193,13 @@
       <textarea name="message" rows="5" required></textarea>
     </label>
 
-    <!-- ▼ 送信ボタン（JavaScriptでメール生成） -->
     <button type="submit" class="contact-submit">送信する</button>
 
     <p class="contact-small">
-      ※「送信する」を押すと、お使いのメールアプリが立ち上がり、<br>
-      「info.gunma@kodomonotabi.net」宛てのメールが作成されます。内容をご確認のうえ送信してください。
+      ※送信内容を確認し、通常3営業日以内にご返信いたします。お急ぎの場合はお電話またはLINEをご利用ください。
     </p>
   </form>
 </section>
-
-<!-- ▼ 文字化けしない Mailto 生成スクリプト -->
-<script>
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // ← 本来の form 送信を止める
-
-  const parentName = document.querySelector("input[name='parentName']").value;
-  const email = document.querySelector("input[name='email']").value;
-  const childName = document.querySelector("input[name='childName']").value;
-  const message = document.querySelector("textarea[name='message']").value;
-
-  const subject = "【お問い合わせ】" + parentName + " 様";
-
-  const body = 
-    "保護者のお名前: " + parentName + "\n" +
-    "メールアドレス: " + email + "\n" +
-    "お子さまのお名前: " + childName + "\n" +
-    "\n--- お問い合わせ内容 ---\n" +
-    message;
-
-  // 日本語をURLエンコード → 文字化けしない
-  const mailto =
-    "mailto:info.gunma@kodomonotabi.net"
-    + "?subject=" + encodeURIComponent(subject)
-    + "&body=" + encodeURIComponent(body);
-
-  // メールアプリを起動
-  window.location.href = mailto;
-});
-</script>
 
 
 

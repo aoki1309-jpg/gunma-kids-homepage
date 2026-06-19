@@ -2995,6 +2995,10 @@ body {
   margin-top: 12px;
 }
 
+.contact-form-hidden {
+  display: none;
+}
+
 .contact-form label {
   font-size: 0.9rem;
   display: flex;
