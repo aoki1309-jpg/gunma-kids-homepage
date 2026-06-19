@@ -3886,6 +3886,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid #9bcce0;
@@ -3914,7 +3915,7 @@ body {
 }
 
 .app-download-content {
-  flex: 1 1 62%;
+  flex: 1 1 auto;
   background: #fff;
   border-radius: 16px;
   padding: 24px 24px 22px;
@@ -3949,6 +3950,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-width: 210px;
   padding: 10px 16px;
   border-radius: 999px;
@@ -3975,53 +3977,16 @@ body {
   color: #2f7a45;
 }
 
-.app-download-visual {
-  flex: 0 0 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.app-download-icon-wrap,
-.app-download-qr-wrap {
-  background: #fff;
-  border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.app-download-icon {
-  width: 100%;
-  max-width: 170px;
-  height: auto;
-}
-
-.app-download-qr-label {
-  margin: 0 0 8px;
-  font-size: 0.85rem;
-  color: #4a4a4a;
-}
-
-.app-download-qr {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
+.app-download-link-icon {
+  flex: 0 0 auto;
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
 }
 
 @media (max-width: 900px) {
   .app-download-inner {
     flex-direction: column;
-  }
-
-  .app-download-visual {
-    flex: 1 1 auto;
-    flex-direction: row;
-  }
-
-  .app-download-icon-wrap,
-  .app-download-qr-wrap {
-    flex: 1 1 50%;
   }
 }
 
@@ -4047,9 +4012,5 @@ body {
   .app-download-button {
     width: 100%;
     min-width: 0;
-  }
-
-  .app-download-visual {
-    flex-direction: column;
   }
 }
