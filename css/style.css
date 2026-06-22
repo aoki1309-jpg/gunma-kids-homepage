@@ -4023,6 +4023,13 @@ body {
 .instagram-lp {
   background: #fffaf0;
   color: #3c362f;
+  overflow-x: hidden;
+}
+
+.instagram-lp *,
+.instagram-lp *::before,
+.instagram-lp *::after {
+  box-sizing: border-box;
 }
 
 .instagram-lp main {
@@ -4035,10 +4042,9 @@ body {
 }
 
 .insta-lp-container {
-  width: 1120px;
+  width: min(1120px, calc(100% - 48px));
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 .insta-lp-header {
@@ -4052,6 +4058,7 @@ body {
   justify-content: space-between;
   gap: 16px;
   padding: 12px 22px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid rgba(247, 183, 70, 0.28);
   backdrop-filter: blur(12px);
@@ -4064,6 +4071,7 @@ body {
   color: #2f7a53;
   font-weight: 700;
   text-decoration: none;
+  min-width: 0;
 }
 
 .insta-lp-logo img {
@@ -4083,6 +4091,7 @@ body {
   color: #fff;
   font-weight: 700;
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .insta-lp-hero {
@@ -4118,7 +4127,7 @@ body {
 .insta-lp-hero-copy {
   position: relative;
   z-index: 1;
-  width: min(760px, 100%);
+  width: min(760px, calc(100% - 48px));
   padding: 118px 24px 80px;
   margin-left: max(24px, calc((100vw - 1120px) / 2));
 }
@@ -4172,6 +4181,7 @@ body {
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
+  max-width: 100%;
   transition: transform 0.16s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -4431,7 +4441,7 @@ body {
   }
 
   .insta-lp-container {
-    padding: 0 18px;
+    width: min(100% - 28px, 1120px);
   }
 
   .insta-lp-two-column,
