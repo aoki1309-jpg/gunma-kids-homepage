@@ -4021,8 +4021,8 @@ body {
 
 /* ========== Instagram広告LP ========== */
 .instagram-lp {
-  background: #f8fbf7;
-  color: #243026;
+  background: #fffaf0;
+  color: #3c362f;
 }
 
 .instagram-lp main {
@@ -4052,8 +4052,8 @@ body {
   justify-content: space-between;
   gap: 16px;
   padding: 12px 22px;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(38, 84, 48, 0.14);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(247, 183, 70, 0.28);
   backdrop-filter: blur(12px);
 }
 
@@ -4061,7 +4061,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #22612f;
+  color: #2f7a53;
   font-weight: 700;
   text-decoration: none;
 }
@@ -4079,7 +4079,7 @@ body {
   min-height: 40px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #19843a;
+  background: #ff9f43;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -4111,8 +4111,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(20, 47, 25, 0.78), rgba(20, 47, 25, 0.34) 52%, rgba(20, 47, 25, 0.1)),
-    linear-gradient(0deg, rgba(20, 47, 25, 0.56), rgba(20, 47, 25, 0.08) 52%);
+    linear-gradient(90deg, rgba(53, 72, 48, 0.72), rgba(53, 72, 48, 0.3) 52%, rgba(53, 72, 48, 0.08)),
+    linear-gradient(0deg, rgba(47, 69, 62, 0.52), rgba(47, 69, 62, 0.06) 52%);
 }
 
 .insta-lp-hero-copy {
@@ -4126,13 +4126,17 @@ body {
 .insta-lp-eyebrow,
 .insta-lp-section-label {
   margin: 0 0 12px;
-  color: #19843a;
+  color: #f07d4f;
   font-size: 0.9rem;
   font-weight: 700;
 }
 
 .insta-lp-hero .insta-lp-eyebrow {
-  color: #e7ffe7;
+  display: inline-flex;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2f7a53;
 }
 
 .insta-lp-hero h1 {
@@ -4140,6 +4144,7 @@ body {
   font-size: clamp(2.1rem, 5.8vw, 4.5rem);
   line-height: 1.14;
   letter-spacing: 0;
+  text-shadow: 0 3px 14px rgba(25, 34, 28, 0.32);
 }
 
 .insta-lp-hero p {
@@ -4175,15 +4180,15 @@ body {
 }
 
 .insta-lp-btn-primary {
-  background: #19843a;
+  background: #ff9f43;
   color: #fff;
-  box-shadow: 0 10px 24px rgba(25, 132, 58, 0.25);
+  box-shadow: 0 10px 24px rgba(255, 159, 67, 0.28);
 }
 
 .insta-lp-btn-secondary {
   background: #fff;
-  color: #22612f;
-  border: 2px solid rgba(34, 97, 47, 0.24);
+  color: #2f7a53;
+  border: 2px solid rgba(100, 187, 214, 0.38);
 }
 
 .insta-lp-section {
@@ -4191,7 +4196,7 @@ body {
 }
 
 .insta-lp-purpose {
-  background: #fff;
+  background: #fff7df;
 }
 
 .insta-lp-two-column {
@@ -4203,7 +4208,7 @@ body {
 
 .insta-lp-section h2 {
   margin: 0;
-  color: #1f4028;
+  color: #3f6f4d;
   font-size: clamp(1.7rem, 3vw, 2.6rem);
   line-height: 1.35;
   letter-spacing: 0;
@@ -4211,7 +4216,7 @@ body {
 
 .insta-lp-section h3 {
   margin: 0 0 8px;
-  color: #23452c;
+  color: #3f6f4d;
   font-size: 1.12rem;
 }
 
@@ -4233,10 +4238,23 @@ body {
 
 .insta-lp-card {
   background: #fff;
-  border: 1px solid rgba(34, 97, 47, 0.12);
+  border: 1px solid rgba(247, 183, 70, 0.24);
   border-radius: 8px;
   padding: 22px;
-  box-shadow: 0 10px 24px rgba(38, 84, 48, 0.08);
+  box-shadow: 0 10px 24px rgba(247, 183, 70, 0.12);
+  border-top: 5px solid #ffd36a;
+}
+
+.insta-lp-card:nth-child(2) {
+  border-top-color: #91d7e8;
+}
+
+.insta-lp-card:nth-child(3) {
+  border-top-color: #ffb3b3;
+}
+
+.insta-lp-card:nth-child(4) {
+  border-top-color: #9edb9e;
 }
 
 .insta-lp-card p {
@@ -4257,7 +4275,7 @@ body {
 }
 
 .insta-lp-safety {
-  background: #eef8f1;
+  background: #eaf8fb;
 }
 
 .insta-lp-safety-list {
@@ -4267,9 +4285,10 @@ body {
 }
 
 .insta-lp-safety-list > div {
-  border-left: 4px solid #19843a;
+  border-left: 4px solid #91d7e8;
   background: #fff;
   padding: 20px;
+  border-radius: 8px;
 }
 
 .insta-lp-safety-list p {
@@ -4289,7 +4308,7 @@ body {
   background: #fff;
   border-radius: 8px;
   padding: 18px;
-  border: 1px solid rgba(34, 97, 47, 0.12);
+  border: 1px solid rgba(247, 183, 70, 0.28);
 }
 
 .insta-lp-flow span {
@@ -4300,7 +4319,7 @@ body {
   height: 34px;
   margin-bottom: 12px;
   border-radius: 50%;
-  background: #19843a;
+  background: #ff9f43;
   color: #fff;
   font-weight: 700;
 }
@@ -4308,7 +4327,7 @@ body {
 .insta-lp-flow strong {
   display: block;
   margin-bottom: 6px;
-  color: #23452c;
+  color: #3f6f4d;
 }
 
 .insta-lp-flow p {
@@ -4317,7 +4336,7 @@ body {
 
 .insta-lp-final-cta {
   padding: 72px 0;
-  background: #24522f;
+  background: #5aa879;
   color: #fff;
   text-align: center;
 }
@@ -4343,7 +4362,7 @@ body {
 
 .insta-lp-company {
   margin: 0 0 4px;
-  color: #22612f;
+  color: #2f7a53;
   font-weight: 700;
 }
 
@@ -4355,7 +4374,7 @@ body {
 }
 
 .insta-lp-footer a {
-  color: #22612f;
+  color: #2f7a53;
   font-weight: 700;
   text-decoration: none;
 }
