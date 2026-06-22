@@ -4165,11 +4165,15 @@ body {
 .insta-lp-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
 }
 
 .insta-lp-actions-center {
   justify-content: center;
+}
+
+.insta-lp-hero .insta-lp-actions {
+  margin-bottom: 18px;
 }
 
 .insta-lp-btn {
@@ -4209,12 +4213,19 @@ body {
 
 .insta-lp-area-note {
   display: inline-block;
-  margin: 18px 0 0;
-  padding: 10px 14px;
+  margin: 6px 0 0;
+  padding: 8px 12px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
   color: #34533d;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.insta-lp-area-note span {
+  color: #f07d4f;
+  font-weight: 800;
 }
 
 .insta-lp-section {
