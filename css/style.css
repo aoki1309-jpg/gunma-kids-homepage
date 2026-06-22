@@ -4191,6 +4191,12 @@ body {
   border: 2px solid rgba(100, 187, 214, 0.38);
 }
 
+.insta-lp-btn-soft {
+  background: #fff7d6;
+  color: #7a5424;
+  border: 2px solid rgba(255, 211, 106, 0.72);
+}
+
 .insta-lp-section {
   padding: 78px 0;
 }
