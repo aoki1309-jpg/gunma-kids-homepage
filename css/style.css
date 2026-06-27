@@ -4675,6 +4675,55 @@ body {
   font-size: 0.86rem;
 }
 
+.app-bridge-social {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e4f1f6;
+}
+
+.app-bridge-social-title {
+  margin: 0 0 10px;
+  color: #667680;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.app-bridge-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.app-bridge-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-bridge-social-link--line {
+  background: #06c755;
+  color: #fff;
+}
+
+.app-bridge-social-link--instagram {
+  background: #fff;
+  color: #c13584;
+  border: 1px solid #f3c2dc;
+}
+
+.app-bridge-social-link.is-disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
 @media (max-width: 480px) {
   .app-bridge-main {
     align-items: start;

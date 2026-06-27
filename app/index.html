@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>ぐんま子どもの旅 申込アプリ</title>
+  <title>ぐんま子どもの旅 公式アプリ ダウンロード</title>
   <meta
     name="description"
-    content="ぐんま子どもの旅 申込アプリのダウンロード案内ページです。iPhoneはApp Store、AndroidはGoogle Playへ進めます。"
+    content="ぐんま子どもの旅 公式アプリのダウンロード案内ページです。iPhoneはApp Store、AndroidはGoogle Playへ進めます。"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="/" />
@@ -22,13 +22,13 @@
     <section class="app-bridge-panel" aria-labelledby="app-bridge-title">
       <img class="app-bridge-logo" src="images/kodomonotabilogo.png?v=2" alt="ぐんま子どもの旅ロゴ" />
       <img class="app-bridge-nijimaru" src="images/nijimaru_.png" alt="にじまる" />
-      <p class="app-bridge-label">申込アプリ</p>
+      <p class="app-bridge-label">公式アプリ</p>
       <h1 id="app-bridge-title">
         <span>ぐんま子どもの旅</span>
-        <span>申込アプリ</span>
+        <span>公式アプリ</span>
       </h1>
       <p class="app-bridge-lead">
-        お使いの端末に合わせて、ストアを選んでください。
+        お使いの端末に合わせて、アプリをダウンロードしてください。
       </p>
       <p id="app-bridge-status" class="app-bridge-status" aria-live="polite">
         端末を確認しています。
@@ -43,7 +43,7 @@
           </span>
           <span class="app-bridge-store-text">
             <span class="app-bridge-store-kicker">iPhone / iPad</span>
-            <span class="app-bridge-store-title">App Store で開く</span>
+            <span class="app-bridge-store-title">App Storeからダウンロード</span>
             <span class="app-bridge-store-note" data-store-note="ios"></span>
           </span>
         </a>
@@ -55,7 +55,7 @@
           </span>
           <span class="app-bridge-store-text">
             <span class="app-bridge-store-kicker">Android</span>
-            <span class="app-bridge-store-title">Google Play で開く</span>
+            <span class="app-bridge-store-title">Google Playでダウンロード</span>
             <span class="app-bridge-store-note" data-store-note="android"></span>
           </span>
         </a>
@@ -64,6 +64,18 @@
       <p class="app-bridge-help">
         自動では移動しません。必ずボタンを押してストアへ進んでください。
       </p>
+
+      <div class="app-bridge-social" aria-label="お問い合わせとSNS">
+        <p class="app-bridge-social-title">お困りの場合・最新情報はこちら</p>
+        <div class="app-bridge-social-links">
+          <a class="app-bridge-social-link app-bridge-social-link--line" data-social-link="line" href="#">
+            LINEで問い合わせる
+          </a>
+          <a class="app-bridge-social-link app-bridge-social-link--instagram" data-social-link="instagram" href="#">
+            Instagramを見る
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -71,6 +83,11 @@
     const APP_STORE_URLS = {
       ios: "https://apps.apple.com/jp/app/id6757183880",
       android: "https://play.google.com/store/apps/details?id=net.kodomonotabi.gunmakidsapp",
+    };
+
+    const APP_SUPPORT_LINKS = {
+      line: "https://lin.ee/NxTli6X",
+      instagram: "",
     };
 
     function detectAppBridgePlatform() {
@@ -114,16 +131,39 @@
 
       if (detected === "ios") {
         actions.prepend(document.querySelector('[data-store="ios"]'));
-        status.textContent = "iPhone / iPad の方は App Store を選んでください。";
+        status.textContent = "iPhone / iPad の方は App Store からダウンロードしてください。";
       } else if (detected === "android") {
         actions.prepend(document.querySelector('[data-store="android"]'));
-        status.textContent = "Android の方は Google Play を選んでください。";
+        status.textContent = "Android の方は Google Play からダウンロードしてください。";
       } else {
         status.textContent = "PCの方は、ご利用端末に合わせてストアを選んでください。";
       }
     }
 
-    document.addEventListener("DOMContentLoaded", setupAppBridgeLinks);
+    function setupAppSupportLinks() {
+      document.querySelectorAll("[data-social-link]").forEach((anchor) => {
+        const key = anchor.getAttribute("data-social-link");
+        const url = APP_SUPPORT_LINKS[key];
+
+        if (url) {
+          anchor.href = url;
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+          return;
+        }
+
+        anchor.href = "#";
+        anchor.setAttribute("aria-disabled", "true");
+        anchor.classList.add("is-disabled");
+        anchor.textContent = `${anchor.textContent}（準備中）`;
+        anchor.addEventListener("click", (event) => event.preventDefault());
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupAppBridgeLinks();
+      setupAppSupportLinks();
+    });
   </script>
 </body>
 </html>
