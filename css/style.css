@@ -4570,13 +4570,35 @@ body {
   font-size: 0.9rem;
 }
 
+.app-bridge-group {
+  margin-top: 22px;
+}
+
+.app-bridge-group + .app-bridge-group {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e4f1f6;
+}
+
+.app-bridge-group-title {
+  margin: 0 0 8px;
+  color: #2f7a53;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .app-bridge-actions {
   display: grid;
   gap: 12px;
-  margin: 22px 0 16px;
+  margin: 14px 0 16px;
 }
 
-.app-bridge-store {
+.app-bridge-actions--official {
+  margin-bottom: 18px;
+}
+
+.app-bridge-link {
   display: grid;
   grid-template-columns: 46px minmax(0, 1fr);
   align-items: center;
@@ -4592,17 +4614,17 @@ body {
   transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.app-bridge-store:hover {
+.app-bridge-link:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(38, 84, 97, 0.14);
 }
 
-.app-bridge-store.is-recommended {
+.app-bridge-link.is-recommended {
   border-color: #ffb84d;
   background: #fff8e8;
 }
 
-.app-bridge-store.is-recommended::before {
+.app-bridge-link.is-recommended::before {
   content: "おすすめ";
   grid-column: 1 / -1;
   width: fit-content;
@@ -4614,7 +4636,7 @@ body {
   font-weight: 700;
 }
 
-.app-bridge-store-icon {
+.app-bridge-link-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4625,45 +4647,75 @@ body {
   color: currentColor;
 }
 
-.app-bridge-store-icon svg {
+.app-bridge-link-icon svg {
   width: 28px;
   height: 28px;
   fill: currentColor;
 }
 
-.app-bridge-store-text {
+.app-bridge-link-text {
   display: grid;
   gap: 3px;
   min-width: 0;
 }
 
-.app-bridge-store--ios {
+.app-bridge-link--ios {
   border-color: #b8d9ee;
 }
 
-.app-bridge-store--android {
+.app-bridge-link--android {
   border-color: #bfe6c7;
 }
 
-.app-bridge-store-kicker {
+.app-bridge-link--line {
+  border-color: #9de8bb;
+  background: #f4fff8;
+  color: #047b36;
+}
+
+.app-bridge-link--instagram {
+  border-color: #f2b8d6;
+  background: #fff8fc;
+  color: #b72b7b;
+}
+
+.app-bridge-link--travel {
+  border-color: #ffd797;
+  background: #fffaf0;
+  color: #7a5420;
+}
+
+.app-bridge-link--contact {
+  border-color: #b8d9ee;
+  background: #f7fcff;
+  color: #245f78;
+}
+
+.app-bridge-link--home {
+  border-color: #c8e6c9;
+  background: #f8fff8;
+  color: #2f7a53;
+}
+
+.app-bridge-link-kicker {
   color: #667680;
   font-size: 0.82rem;
   font-weight: 700;
 }
 
-.app-bridge-store-title {
+.app-bridge-link-title {
   font-size: 1.08rem;
   font-weight: 700;
 }
 
-.app-bridge-store-note {
+.app-bridge-link-note {
   min-height: 1em;
   color: #c05f36;
   font-size: 0.86rem;
   font-weight: 700;
 }
 
-.app-bridge-store.is-disabled {
+.app-bridge-link.is-disabled {
   opacity: 0.58;
   cursor: not-allowed;
   box-shadow: none;
@@ -4673,55 +4725,8 @@ body {
 .app-bridge-help {
   color: #667680;
   font-size: 0.86rem;
-}
-
-.app-bridge-social {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid #e4f1f6;
-}
-
-.app-bridge-social-title {
-  margin: 0 0 10px;
-  color: #667680;
-  font-size: 0.86rem;
-  font-weight: 700;
   line-height: 1.6;
-}
-
-.app-bridge-social-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.app-bridge-social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.app-bridge-social-link--line {
-  background: #06c755;
-  color: #fff;
-}
-
-.app-bridge-social-link--instagram {
-  background: #fff;
-  color: #c13584;
-  border: 1px solid #f3c2dc;
-}
-
-.app-bridge-social-link.is-disabled {
-  opacity: 0.58;
-  cursor: not-allowed;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 480px) {
@@ -4746,7 +4751,7 @@ body {
     height: 38px;
   }
 
-  .app-bridge-store {
+  .app-bridge-link {
     min-height: 72px;
     padding: 13px 15px;
   }
