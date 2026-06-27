@@ -4486,3 +4486,172 @@ body {
     width: 100%;
   }
 }
+
+/* ========== アプリ配布用中間ページ ========== */
+.app-bridge-page {
+  min-height: 100vh;
+  background: #f6fbff;
+  color: #24313a;
+}
+
+.app-bridge-page *,
+.app-bridge-page *::before,
+.app-bridge-page *::after {
+  box-sizing: border-box;
+}
+
+.app-bridge-main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.app-bridge-panel {
+  width: min(520px, 100%);
+  padding: 28px 22px 24px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dbeef6;
+  box-shadow: 0 12px 28px rgba(38, 84, 97, 0.12);
+  text-align: center;
+}
+
+.app-bridge-logo {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+
+.app-bridge-label {
+  margin: 0 0 6px;
+  color: #2f7a53;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.app-bridge-panel h1 {
+  margin: 0 0 10px;
+  color: #2b6078;
+  font-size: clamp(1.55rem, 7vw, 2.1rem);
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.app-bridge-lead,
+.app-bridge-help,
+.app-bridge-status {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.app-bridge-lead {
+  color: #3d4e57;
+}
+
+.app-bridge-status {
+  margin-top: 10px;
+  color: #667680;
+  font-size: 0.9rem;
+}
+
+.app-bridge-actions {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 16px;
+}
+
+.app-bridge-store {
+  display: grid;
+  gap: 3px;
+  min-height: 76px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  text-align: left;
+  text-decoration: none;
+  border: 2px solid #d9edf8;
+  background: #f8fcff;
+  color: #24313a;
+  transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.app-bridge-store:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(38, 84, 97, 0.14);
+}
+
+.app-bridge-store.is-recommended {
+  border-color: #ffb84d;
+  background: #fff8e8;
+}
+
+.app-bridge-store.is-recommended::before {
+  content: "おすすめ";
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ff9f43;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.app-bridge-store--ios {
+  border-color: #b8d9ee;
+}
+
+.app-bridge-store--android {
+  border-color: #bfe6c7;
+}
+
+.app-bridge-store-kicker {
+  color: #667680;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.app-bridge-store-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.app-bridge-store-note {
+  min-height: 1em;
+  color: #c05f36;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.app-bridge-store.is-disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.app-bridge-help {
+  color: #667680;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 480px) {
+  .app-bridge-main {
+    align-items: start;
+    padding: 18px 12px;
+  }
+
+  .app-bridge-panel {
+    padding: 22px 16px 20px;
+  }
+
+  .app-bridge-logo {
+    width: 74px;
+    height: 74px;
+  }
+
+  .app-bridge-store {
+    min-height: 72px;
+    padding: 13px 15px;
+  }
+}

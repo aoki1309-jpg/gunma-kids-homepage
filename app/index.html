@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ぐんまこどもの国 申込アプリ</title>
+  <meta
+    name="description"
+    content="ぐんまこどもの国 申込アプリのダウンロード案内ページです。iPhoneはApp Store、AndroidはGoogle Playへ進めます。"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <link rel="icon" href="images/favicon-192.png" type="image/png" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="app-bridge-page">
+  <main class="app-bridge-main">
+    <section class="app-bridge-panel" aria-labelledby="app-bridge-title">
+      <img class="app-bridge-logo" src="images/kodomonotabilogo.png?v=2" alt="ぐんま子どもの旅ロゴ" />
+      <p class="app-bridge-label">申込アプリ</p>
+      <h1 id="app-bridge-title">ぐんまこどもの国 申込アプリ</h1>
+      <p class="app-bridge-lead">
+        お使いの端末に合わせて、ストアを選んでください。
+      </p>
+      <p id="app-bridge-status" class="app-bridge-status" aria-live="polite">
+        端末を確認しています。
+      </p>
+
+      <div id="app-bridge-actions" class="app-bridge-actions" aria-label="アプリストアリンク">
+        <a class="app-bridge-store app-bridge-store--ios" data-store="ios" href="#">
+          <span class="app-bridge-store-kicker">iPhone / iPad</span>
+          <span class="app-bridge-store-title">App Store で開く</span>
+          <span class="app-bridge-store-note" data-store-note="ios"></span>
+        </a>
+        <a class="app-bridge-store app-bridge-store--android" data-store="android" href="#">
+          <span class="app-bridge-store-kicker">Android</span>
+          <span class="app-bridge-store-title">Google Play で開く</span>
+          <span class="app-bridge-store-note" data-store-note="android"></span>
+        </a>
+      </div>
+
+      <p class="app-bridge-help">
+        自動では移動しません。必ずボタンを押してストアへ進んでください。
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const APP_STORE_URLS = {
+      ios: "https://apps.apple.com/jp/app/id6757183880",
+      android: "https://play.google.com/store/apps/details?id=net.kodomonotabi.gunmakidsapp",
+    };
+
+    function detectAppBridgePlatform() {
+      const ua = navigator.userAgent || "";
+      const platform = navigator.platform || "";
+      const isIOS = /iPhone|iPad|iPod/i.test(ua)
+        || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+
+      if (isIOS) return "ios";
+      if (isAndroid) return "android";
+      return "other";
+    }
+
+    function setupAppBridgeLinks() {
+      const detected = detectAppBridgePlatform();
+      const actions = document.getElementById("app-bridge-actions");
+      const status = document.getElementById("app-bridge-status");
+      const cards = Array.from(document.querySelectorAll("[data-store]"));
+
+      cards.forEach((card) => {
+        const store = card.getAttribute("data-store");
+        const url = APP_STORE_URLS[store];
+        const note = document.querySelector(`[data-store-note="${store}"]`);
+
+        if (url) {
+          card.href = url;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+          if (note) note.textContent = "";
+        } else {
+          card.href = "#";
+          card.setAttribute("aria-disabled", "true");
+          card.classList.add("is-disabled");
+          if (note) note.textContent = "準備中";
+          card.addEventListener("click", (event) => event.preventDefault());
+        }
+
+        card.classList.toggle("is-recommended", store === detected);
+      });
+
+      if (detected === "ios") {
+        actions.prepend(document.querySelector('[data-store="ios"]'));
+        status.textContent = "iPhone / iPad の方は App Store を選んでください。";
+      } else if (detected === "android") {
+        actions.prepend(document.querySelector('[data-store="android"]'));
+        status.textContent = "Android の方は Google Play を選んでください。";
+      } else {
+        status.textContent = "PCの方は、ご利用端末に合わせてストアを選んでください。";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", setupAppBridgeLinks);
+  </script>
+</body>
+</html>
