@@ -4564,7 +4564,9 @@ body {
 
 .app-bridge-store {
   display: grid;
-  gap: 3px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 13px;
   min-height: 76px;
   padding: 14px 18px;
   border-radius: 8px;
@@ -4588,6 +4590,7 @@ body {
 
 .app-bridge-store.is-recommended::before {
   content: "おすすめ";
+  grid-column: 1 / -1;
   width: fit-content;
   padding: 2px 8px;
   border-radius: 999px;
@@ -4595,6 +4598,29 @@ body {
   color: #fff;
   font-size: 0.76rem;
   font-weight: 700;
+}
+
+.app-bridge-store-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: #fff;
+  color: currentColor;
+}
+
+.app-bridge-store-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.app-bridge-store-text {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
 }
 
 .app-bridge-store--ios {
