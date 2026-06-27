@@ -4625,7 +4625,7 @@ body {
 }
 
 .app-bridge-link.is-recommended::before {
-  content: "おすすめ";
+  content: attr(data-badge);
   grid-column: 1 / -1;
   width: fit-content;
   padding: 2px 8px;
@@ -4673,10 +4673,20 @@ body {
   color: #047b36;
 }
 
+.app-bridge-link--line.is-recommended {
+  border-color: #06c755;
+  background: #f4fff8;
+}
+
 .app-bridge-link--instagram {
   border-color: #f2b8d6;
   background: #fff8fc;
   color: #b72b7b;
+}
+
+.app-bridge-link--instagram.is-recommended {
+  border-color: #e06aa8;
+  background: #fff8fc;
 }
 
 .app-bridge-link--travel {
