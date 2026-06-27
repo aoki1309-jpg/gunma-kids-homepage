@@ -4515,6 +4515,7 @@ body {
   border: 1px solid #dbeef6;
   box-shadow: 0 12px 28px rgba(38, 84, 97, 0.12);
   text-align: center;
+  position: relative;
 }
 
 .app-bridge-logo {
@@ -4522,6 +4523,15 @@ body {
   height: 86px;
   object-fit: contain;
   margin: 0 auto 10px;
+}
+
+.app-bridge-nijimaru {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
 }
 
 .app-bridge-label {
@@ -4537,6 +4547,10 @@ body {
   font-size: clamp(1.55rem, 7vw, 2.1rem);
   line-height: 1.35;
   letter-spacing: 0;
+}
+
+.app-bridge-panel h1 span {
+  display: block;
 }
 
 .app-bridge-lead,
@@ -4674,6 +4688,13 @@ body {
   .app-bridge-logo {
     width: 74px;
     height: 74px;
+  }
+
+  .app-bridge-nijimaru {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
   }
 
   .app-bridge-store {
