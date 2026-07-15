@@ -529,6 +529,100 @@ header {
   margin: 0;
 }
 
+.top-apply-cta {
+  background: #fffaf0;
+  border-top: 1px solid #f4dfb8;
+  border-bottom: 1px solid #f4dfb8;
+  padding: 22px 0;
+}
+
+.top-apply-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.top-apply-cta-text {
+  flex: 1;
+}
+
+.top-apply-cta-label {
+  display: inline-flex;
+  margin: 0 0 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.top-apply-cta h2 {
+  margin: 0 0 8px;
+  color: #2e7d32;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  line-height: 1.45;
+}
+
+.top-apply-cta p {
+  margin: 0;
+  color: #4f4f4f;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.top-apply-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.top-apply-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.top-apply-cta-button--primary {
+  background: #2e7d32;
+  color: #fff;
+  border: 1px solid #2e7d32;
+}
+
+.top-apply-cta-button--sub {
+  background: #fff;
+  color: #2e7d32;
+  border: 1px solid #8bcf94;
+}
+
+.top-apply-cta-button:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .top-apply-cta-inner {
+    display: block;
+  }
+
+  .top-apply-cta-actions {
+    justify-content: stretch;
+    margin-top: 14px;
+  }
+
+  .top-apply-cta-button {
+    width: 100%;
+  }
+}
+
 /* =========================
    スマホ用レイアウト調整
    ========================= */
@@ -1820,6 +1914,29 @@ body {
 
 .application-main-button {
   margin-top: 16px;
+}
+
+.application-reassurance {
+  margin: 16px auto 18px;
+  padding: 14px 16px;
+  max-width: 760px;
+  background: #fffaf0;
+  border: 1px solid #f4dfb8;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.application-reassurance p {
+  margin: 0 0 8px;
+  color: #444;
+}
+
+.application-reassurance ul {
+  margin: 0;
+  padding-left: 1.2em;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* 共通ボタン（ページ全体で使える汎用スタイル） */
