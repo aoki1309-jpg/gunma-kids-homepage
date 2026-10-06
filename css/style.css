@@ -4883,3 +4883,482 @@ body {
     padding: 13px 15px;
   }
 }
+
+/* ========== 公式リンク集 目的別レイアウト ========== */
+.app-bridge-page {
+  background: #f4fbf7;
+  color: #24343c;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.app-bridge-main {
+  display: block;
+  padding: 0 16px 40px;
+}
+
+.app-bridge-panel {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+
+.app-bridge-hero {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  background: #e9faf7;
+}
+
+.app-bridge-hero-image {
+  display: block;
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.app-bridge-hero-copy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 20px 26px 24px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.app-bridge-logo {
+  width: 62px;
+  height: 62px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.app-bridge-eyebrow {
+  margin: 0 0 4px;
+  color: #297554;
+  font-size: 0.79rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.app-bridge-panel h1 {
+  margin: 0;
+  color: #224e62;
+  font-size: clamp(1.55rem, 5vw, 2rem);
+  line-height: 1.3;
+}
+
+.app-bridge-lead {
+  margin-top: 5px;
+  color: #485b63;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.app-bridge-group {
+  margin: 0;
+  padding: 34px 24px 0;
+}
+
+.app-bridge-group + .app-bridge-group {
+  margin: 0;
+  padding-top: 34px;
+  border: 0;
+}
+
+.app-bridge-group-title {
+  margin: 0 0 14px;
+  color: #214e62;
+  font-size: 1.22rem;
+  line-height: 1.45;
+}
+
+.app-bridge-group--primary {
+  padding-top: 28px;
+}
+
+.app-bridge-actions {
+  gap: 12px;
+  margin: 0;
+}
+
+.app-bridge-link {
+  grid-template-columns: 48px minmax(0, 1fr) 22px;
+  gap: 14px;
+  min-height: 92px;
+  padding: 16px 18px;
+  border-width: 1px;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px rgba(42, 82, 71, 0.08);
+}
+
+.app-bridge-link--primary .app-bridge-link-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.app-bridge-link--travel {
+  border-color: #f2c76f;
+  background: #fff7dc;
+  color: #765019;
+}
+
+.app-bridge-link--line {
+  border-color: #78d99e;
+  background: #ebfff2;
+  color: #08793a;
+}
+
+.app-bridge-link-title {
+  font-size: 1.08rem;
+}
+
+.app-bridge-link-description {
+  color: #53666d;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.app-bridge-link-arrow {
+  color: currentColor;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.app-bridge-story {
+  margin-top: 36px;
+  background: #fff;
+}
+
+.app-bridge-story-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.app-bridge-story-copy {
+  padding: 24px;
+}
+
+.app-bridge-story-copy h2,
+.app-bridge-app-copy h2 {
+  margin: 0 0 10px;
+  color: #214e62;
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.app-bridge-story-copy > p:not(.app-bridge-eyebrow) {
+  margin: 0;
+  color: #52646b;
+  line-height: 1.8;
+}
+
+.app-bridge-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: #277553;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-bridge-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.app-bridge-mini-link {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  gap: 3px;
+  min-height: 118px;
+  padding: 14px;
+  border: 1px solid #cfe7da;
+  border-radius: 8px;
+  background: #fff;
+  color: #355158;
+  text-decoration: none;
+}
+
+.app-bridge-mini-link--contact {
+  border-color: #c4dfee;
+}
+
+.app-bridge-mini-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e5f7eb;
+  color: #24704d;
+  font-weight: 700;
+}
+
+.app-bridge-mini-link--contact .app-bridge-mini-icon {
+  background: #e7f5fb;
+  color: #24667e;
+}
+
+.app-bridge-mini-link span:not(.app-bridge-mini-icon) {
+  margin-top: 4px;
+  color: #728188;
+  font-size: 0.76rem;
+}
+
+.app-bridge-mini-link strong {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.app-bridge-section-note {
+  margin: -7px 0 14px;
+  color: #617178;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.app-bridge-social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.app-bridge-social-link {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 15px 6px 13px;
+  border: 1px solid #dbe7ea;
+  border-radius: 8px;
+  background: #fff;
+  color: #2d3c42;
+  font-size: 0.79rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-bridge-social-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f2f5f6;
+  font-size: 1.12rem;
+}
+
+.app-bridge-social-link--instagram {
+  color: #b32c78;
+}
+
+.app-bridge-social-link--instagram .app-bridge-social-icon {
+  background: #fff0f8;
+}
+
+.app-bridge-app {
+  display: grid;
+  grid-template-columns: 42% minmax(0, 1fr);
+  margin-top: 38px;
+  background: #eef9ff;
+}
+
+.app-bridge-app-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-bridge-app-copy {
+  align-self: center;
+  padding: 24px;
+}
+
+.app-bridge-status {
+  margin: 0 0 14px;
+  color: #5f7077;
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.app-bridge-store-actions {
+  display: grid;
+  gap: 9px;
+}
+
+.app-bridge-store-link {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid #bfd8e5;
+  border-radius: 8px;
+  background: #fff;
+  color: #273a42;
+  text-decoration: none;
+}
+
+.app-bridge-store-link.is-recommended {
+  border: 2px solid #2d7a56;
+}
+
+.app-bridge-store-icon,
+.app-bridge-store-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.app-bridge-store-icon svg {
+  fill: currentColor;
+}
+
+.app-bridge-store-link small,
+.app-bridge-store-link strong {
+  display: block;
+}
+
+.app-bridge-store-link small {
+  color: #6c7c82;
+  font-size: 0.68rem;
+}
+
+.app-bridge-store-link strong {
+  margin-top: 1px;
+  font-size: 0.9rem;
+}
+
+.app-bridge-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 26px 16px 8px;
+  color: #75848a;
+  font-size: 0.82rem;
+}
+
+.app-bridge-footer a {
+  color: #49666f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.app-bridge-link.is-disabled,
+.app-bridge-store-link.is-disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .app-bridge-main {
+    padding: 0 0 28px;
+  }
+
+  .app-bridge-hero,
+  .app-bridge-hero-image {
+    height: 405px;
+    min-height: 405px;
+  }
+
+  .app-bridge-hero-image {
+    object-position: center 30%;
+  }
+
+  .app-bridge-hero-copy {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 11px;
+    padding: 16px 18px 19px;
+  }
+
+  .app-bridge-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .app-bridge-panel h1 {
+    font-size: clamp(1.42rem, 7vw, 1.72rem);
+  }
+
+  .app-bridge-lead {
+    font-size: 0.83rem;
+  }
+
+  .app-bridge-group {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .app-bridge-link {
+    grid-template-columns: 44px minmax(0, 1fr) 18px;
+    gap: 11px;
+    min-height: 88px;
+    padding: 14px;
+  }
+
+  .app-bridge-link-description {
+    font-size: 0.76rem;
+  }
+
+  .app-bridge-story-copy {
+    padding: 22px 18px;
+  }
+
+  .app-bridge-app {
+    grid-template-columns: 34% minmax(0, 1fr);
+  }
+
+  .app-bridge-app-copy {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-bridge-hero,
+  .app-bridge-hero-image {
+    height: 375px;
+    min-height: 375px;
+  }
+
+  .app-bridge-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-bridge-social-grid {
+    gap: 7px;
+  }
+
+  .app-bridge-social-link {
+    padding-right: 3px;
+    padding-left: 3px;
+    font-size: 0.7rem;
+  }
+
+  .app-bridge-app {
+    grid-template-columns: 1fr;
+  }
+
+  .app-bridge-app-image {
+    height: 210px;
+    object-position: center 35%;
+  }
+}
